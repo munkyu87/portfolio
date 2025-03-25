@@ -44,6 +44,18 @@ export default function socialMedia() {
         </a>
       ) : null}
 
+      {socialMediaLinks.blog ? (
+        <a
+          href={socialMediaLinks.blog}
+          className="icon-button blog"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fas fa-pen-nib"></i>
+          <span></span>
+        </a>
+      ) : null}
+
       {socialMediaLinks.gitlab ? (
         <a
           href={socialMediaLinks.gitlab}
