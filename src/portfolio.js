@@ -23,7 +23,7 @@ const greeting = {
   username: "Munkyu Choi",
   title: "안녕, 나는 최문규!",
   subTitle: emoji(
-    "프론트엔드 개발자입니다. 하지만 백엔드와 인프라를 포함한 다양한 개발에 흥미가 많고, AI, 웹, 모바일, ERP 시스템 등 여러 분야의 개발을 즐깁니다. 새로운 기술을 탐구하며 풀스택 개발자를 지향하고 있습니다."
+    "프론트엔드 개발자입니다. 하지만 백엔드와 인프라를 포함한 다양한 개발에 흥미가 많고, AI, 웹, DB, 모바일, ERP 시스템 등 여러 분야의 개발을 즐깁니다. 새로운 기술을 탐구하며 풀스택 개발자를 지향하고 있습니다."
   ),
   // resumeLink:
   //   "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
@@ -38,6 +38,7 @@ const socialMediaLinks = {
     "https://www.linkedin.com/in/%EB%AC%B8%EA%B7%9C-%EC%B5%9C-5a30892b2/",
   gmail: "munstar87@naver.com",
   blog: "https://munkyu87.github.io/",
+  instagram: "https://instagram.com/mk_choi87",
   // gitlab: "https://gitlab.com/saadpasta",
   // facebook: "https://www.facebook.com/saad.pasta7",
   // medium: "https://medium.com/@saadpasta",
@@ -50,16 +51,17 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  title: "✨ 내가 만들고 즐기는 것들",
+  // subTitle: "주로 사용하는 개발",
+  // skillSubTitle: "주로 사용하는 도구",
   skills: [
-    emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
-    ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    )
+    // emoji(
+    //   "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+    // ),
+    // emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
+    // emoji(
+    //   "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
+    // )
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -67,56 +69,114 @@ https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
+      skillName: "React",
+      icon: "https://skillicons.dev/icons?i=react&theme=light",
+      level: "gold"
     },
     {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
+      skillName: "React Native",
+      icon: "https://skillicons.dev/icons?i=react",
+      level: "gold"
     },
     {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
+      skillName: "TypeScript",
+      icon: "https://skillicons.dev/icons?i=typescript",
+      level: "gold"
     },
     {
       skillName: "JavaScript",
-      fontAwesomeClassname: "fab fa-js"
+      icon: "https://skillicons.dev/icons?i=javascript",
+      level: "gold"
     },
     {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
+      skillName: "MySQL",
+      icon: "https://skillicons.dev/icons?i=mysql",
+      level: "gold"
     },
     {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
+      skillName: "MsSQL",
+      icon: "https://skillicons.dev/icons?i=mysql",
+      level: "gold"
     },
     {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
+      skillName: "Oracle",
+      icon: "https://skillicons.dev/icons?i=oracle",
+      level: "gold"
     },
     {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
+      skillName: "ERP",
+      icon: "https://skillicons.dev/icons?i=csharp",
+      level: "gold"
     },
     {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
+      skillName: "selenium",
+      icon: "https://skillicons.dev/icons?i=selenium",
+      level: "gold"
     },
     {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws"
+      skillName: "appium",
+      icon: "https://skillicons.dev/icons?i=appium",
+      level: "gold"
     },
     {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
+      skillName: "Java",
+      icon: "https://skillicons.dev/icons?i=java",
+      level: "silver"
     },
     {
-      skillName: "python",
-      fontAwesomeClassname: "fab fa-python"
+      skillName: "JPA",
+      icon: "https://skillicons.dev/icons?i=spring",
+      level: "silver"
     },
     {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
+      skillName: "Docker",
+      icon: "https://skillicons.dev/icons?i=docker",
+      level: "silver"
+    },
+    {
+      skillName: ".NET",
+      icon: "https://skillicons.dev/icons?i=dotnet",
+      level: "silver"
+    },
+    {
+      skillName: "C#",
+      icon: "https://skillicons.dev/icons?i=cs",
+      level: "silver"
+    },
+    {
+      skillName: "AWS",
+      icon: "https://skillicons.dev/icons?i=aws",
+      level: "bronze"
+    }
+  ],
+  softwareTools: [
+    {
+      toolName: "Github",
+      icon: "https://skillicons.dev/icons?i=github"
+    },
+    {
+      toolName: "vscode",
+      icon: "https://skillicons.dev/icons?i=vscode"
+    },
+    {
+      toolName: "intelliJ",
+      icon: "https://skillicons.dev/icons?i=intelliJ"
+    },
+    {
+      toolName: "Git",
+      icon: "https://skillicons.dev/icons?i=git"
+    },
+    {
+      toolName: "sentry",
+      icon: "https://skillicons.dev/icons?i=sentry"
+    },
+    {
+      toolName: "postman",
+      icon: "https://skillicons.dev/icons?i=postman"
+    },
+    {
+      toolName: "Figma",
+      icon: "https://skillicons.dev/icons?i=figma"
     }
   ],
   display: true // Set false to hide this section, defaults to true

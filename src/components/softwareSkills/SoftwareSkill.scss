@@ -11,8 +11,73 @@
 
 .software-skill-inline {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 25px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.skill-icon-wrapper {
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  .skill-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    padding: 3px 6px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &.gold .skill-badge {
+    color: gold;
+  }
+
+  &.silver .skill-badge {
+    color: silver;
+  }
+
+  &.bronze .skill-badge {
+    color: peru;
+  }
+}
+
+.skill-icon-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+.skill-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  padding: 2px 4px;
+  font-size: 1rem;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.skill-badge.gold {
+  // background: linear-gradient(to right, #f5c542, #f1b700);
+  box-shadow: 0 0 4px #f1b700;
+}
+
+.skill-badge.silver {
+  // background: linear-gradient(to right, #c0c0c0, #a9a9a9);
+  box-shadow: 0 0 4px #a9a9a9;
+}
+
+.skill-badge.bronze {
+  // background: linear-gradient(to right, #cd7f32, #b87333);
+  // box-shadow: 0 0 2px #b87333;
 }
 
 .software-skill-inline > i {
@@ -22,10 +87,9 @@
 .software-skill-inline > i:hover {
   color: $skillsColor;
 }
+
 .software-skill-inline > p {
   color: $subTitle;
   font-size: 10px;
-}
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+  margin-top: 5px;
 }
