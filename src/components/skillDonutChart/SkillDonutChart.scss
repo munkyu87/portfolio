@@ -1,0 +1,26 @@
+.donut-chart-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.donut-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.donut-charts {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.donut-item {
+  width: 100px;
+  text-align: center;
+
+  p {
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+}

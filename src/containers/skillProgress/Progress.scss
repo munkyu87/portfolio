@@ -68,3 +68,59 @@
     order: 2;
   }
 }
+
+// .donut-chart-container {
+//   // background-color: red;
+//   margin-top: 2rem;
+//   text-align: center;
+// }
+
+// .donut-charts {
+//   display: flex;
+//   justify-content: center;
+//   gap: 2rem;
+//   flex-wrap: wrap;
+// }
+
+// .donut-item {
+//   width: 100px;
+//   text-align: center;
+
+//   p {
+//     margin-top: 0.5rem;
+//     font-weight: 500;
+//   }
+// }
+
+.donut-chart-container {
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.donut-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.donut-item {
+  width: 100px;
+  text-align: center;
+
+  p {
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+.CircularProgressbar-text {
+  dominant-baseline: middle;
+  alignment-baseline: middle;
+  text-anchor: middle;
+  font-size: 18px;
+}

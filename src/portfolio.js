@@ -59,9 +59,6 @@ const skillsSection = {
     //   "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
     // ),
     // emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
-    // emoji(
-    //   "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
-    // )
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -184,8 +181,40 @@ https://fontawesome.com/icons?d=gallery */
 
 // Education Section
 
+const techStack = {
+  viewSkillBars: true,
+  experience: [
+    {
+      Stack: "Frontend", //Insert stack or technology you have experience in
+      progressPercentage: 80, //Insert relative proficiency in percentage
+      color: "#4e73df"
+    },
+    {
+      Stack: "Backend",
+      progressPercentage: 50,
+      color: "#1cc88a"
+    },
+    {
+      Stack: "Database",
+      progressPercentage: 80,
+      color: "#f6c23e"
+    },
+    {
+      Stack: "ERP",
+      progressPercentage: 85,
+      color: "#36b9cc"
+    },
+    {
+      Stack: "Programing",
+      progressPercentage: 70,
+      color: "#e74a3b"
+    }
+  ],
+  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+};
+
 const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
+  display: false, // Set false to hide this section, defaults to true
   schools: [
     {
       schoolName: "Harvard University",
@@ -209,27 +238,6 @@ const educationInfo = {
   ]
 };
 
-// Your top 3 proficient stac ks/tech experience
-
-const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
-  experience: [
-    {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Backend",
-      progressPercentage: "70%"
-    },
-    {
-      Stack: "Programming",
-      progressPercentage: "60%"
-    }
-  ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
-};
-
 // Work experience section
 
 const workExperiences = {
@@ -251,6 +259,13 @@ const workExperiences = {
       company: "Quora",
       companylogo: require("./assets/images/quoraLogo.png"),
       date: "May 2017 – May 2018",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      role: "Software Engineer Intern",
+      company: "Airbnb",
+      companylogo: require("./assets/images/airbnbLogo.png"),
+      date: "Jan 2015 – Sep 2015",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
