@@ -51,39 +51,7 @@ export default function StackProgress() {
                 ))}
               </div>
             </div>
-            {/* <div className="donut-chart-container">
-              <div className="donut-charts">
-                {techStack.experience.map((exp, idx) => (
-                  <div key={idx} className="donut-item">
-                    <CircularProgressbar
-                      value={exp.progressPercentage}
-                      text={`${exp.progressPercentage}%`}
-                      styles={buildStyles({
-                        textColor: "#000",
-                        pathColor: exp.color,
-                        trailColor: "#eee"
-                      })}
-                    />
-                    <p>{exp.Stack}</p>
-                  </div>
-                ))}
-              </div>
-            </div> */}
-            {/* {techStack.experience.map((exp, i) => {
-              const progressStyle = {
-                width: exp.progressPercentage
-              };
-              return (
-                <div key={i} className="skill">
-                  <p>{exp.Stack}</p>
-                  <div className="meter">
-                    <span style={progressStyle}></span>
-                  </div>
-                </div>
-              );
-            })} */}
           </div>
-
           <div className="skills-image">
             {illustration.animated ? (
               <DisplayLottie animationData={Build} />

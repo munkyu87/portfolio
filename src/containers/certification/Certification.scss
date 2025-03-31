@@ -1,0 +1,112 @@
+.certification-section {
+  padding: 2rem;
+  text-align: center;
+
+  // 다크모드 배경 추가
+  &.dark-mode {
+    // background-color: #0a192f; // 다크 배경
+    color: white;
+  }
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.certification-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.cert-custom-card {
+  width: 250px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+
+  // 다크모드 스타일
+  .dark-mode & {
+    background-color: #1e293b;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+}
+
+.cert-custom-card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  .dark-mode & {
+    background-color: #334155;
+  }
+}
+
+.cert-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: inherit;
+}
+
+.cert-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cert-body {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.cert-number {
+  text-align: left;
+  font-size: 0.8rem;
+  color: #666;
+
+  .dark-mode & {
+    color: #ccc;
+  }
+}
+
+.cert-date {
+  text-align: left;
+  font-size: 0.85rem;
+  color: #444;
+  font-weight: 500;
+
+  .dark-mode & {
+    color: #ddd;
+  }
+}
+
+.cert-issuer {
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #333;
+
+  .dark-mode & {
+    color: #ccc;
+  }
+}

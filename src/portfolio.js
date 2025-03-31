@@ -380,6 +380,42 @@ const achievementSection = {
   display: true // Set false to hide this section, defaults to true
 };
 
+const certificationSection = {
+  title: "📄 자격증",
+  // subtitle: "서브 타이틀",
+
+  certificationsCards: [
+    {
+      name: "정보처리기사",
+      issuer: "한국산업인력공단",
+      date: "2022.06",
+      certNumber: "22-123456",
+      logo: require("./assets/images/facebookLogo.png"),
+      image: "certifications/정보처리기사.png"
+      // image: require("./assets/images/facebookLogo.png")
+    },
+    {
+      name: "SQLD (SQL 개발자)",
+      issuer: "한국데이터산업진흥원",
+      date: "2021.09",
+      certNumber: "SQ-987654",
+      logo: require("./assets/images/facebookLogo.png"),
+      image: "certifications/sqld자격증.png"
+      // image: require("./assets/images/nextuLogo.webp")
+    },
+    {
+      name: "리눅스마스터 2급",
+      issuer: "한국정보통신진흥협회",
+      date: "2013.12.20",
+      certNumber: "LMS-1304-001418",
+      logo: require("./assets/images/facebookLogo.png"),
+      image: "certifications/리눅스마스터.png"
+      // image: require("./assets/images/nextuLogo.webp")
+    }
+  ],
+  display: true
+};
+
 // Blogs Section
 
 const blogSection = {
@@ -447,10 +483,10 @@ const resumeSection = {
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
-  subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  // subtitle:
+  //   "Discuss a project or just want to say hi? My Inbox is open for all.",
+  // number: "+92-0000000000",
+  email_address: "munstar87@naver.com"
 };
 
 // Twitter Section
@@ -474,6 +510,7 @@ export {
   openSource,
   bigProjects,
   achievementSection,
+  certificationSection,
   blogSection,
   talkSection,
   podcastSection,
