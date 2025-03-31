@@ -51,7 +51,7 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "✨ 내가 만들고 즐기는 것들",
+  title: "✨ 내가 만들고 즐기는 것",
   // subTitle: "주로 사용하는 개발",
   // skillSubTitle: "주로 사용하는 도구",
   skills: [
@@ -386,31 +386,52 @@ const certificationSection = {
 
   certificationsCards: [
     {
-      name: "정보처리기사",
-      issuer: "한국산업인력공단",
-      date: "2022.06",
-      certNumber: "22-123456",
-      logo: require("./assets/images/facebookLogo.png"),
-      image: "certifications/정보처리기사.png"
-      // image: require("./assets/images/facebookLogo.png")
-    },
-    {
       name: "SQLD (SQL 개발자)",
       issuer: "한국데이터산업진흥원",
-      date: "2021.09",
-      certNumber: "SQ-987654",
-      logo: require("./assets/images/facebookLogo.png"),
+      date: "2023-04-14",
+      certNumber: "SQLD-048001032",
+      logo: "certifications/한국데이터산업진흥원Logo.png",
       image: "certifications/sqld자격증.png"
-      // image: require("./assets/images/nextuLogo.webp")
+    },
+    {
+      name: "정보처리기사",
+      issuer: "한국산업인력공단",
+      date: "2018-05-25",
+      certNumber: "18201010939D",
+      logo: "certifications/한국산업인력공단Logo.png",
+      image: "certifications/정보처리기사.png"
     },
     {
       name: "리눅스마스터 2급",
       issuer: "한국정보통신진흥협회",
-      date: "2013.12.20",
+      date: "2013-12-20",
       certNumber: "LMS-1304-001418",
-      logo: require("./assets/images/facebookLogo.png"),
+      logo: "certifications/한국정보통신진흥협회Logo.png",
       image: "certifications/리눅스마스터.png"
-      // image: require("./assets/images/nextuLogo.webp")
+    },
+    {
+      name: "정보처리산업기사",
+      issuer: "한국산업인력공단",
+      date: "2013-11-15",
+      certNumber: "1320307156K",
+      logo: "certifications/한국산업인력공단Logo.png",
+      image: "certifications/정보처리산업기사.png"
+    },
+    {
+      name: "정보처리기능사",
+      issuer: "한국산업인력공단",
+      date: "2011-12-02",
+      certNumber: "11652001779C",
+      logo: "certifications/한국산업인력공단Logo.png",
+      image: "certifications/정보처리기능사.png"
+    },
+    {
+      name: "MOS PowerPoint",
+      issuer: "Microsoft",
+      date: "2013-04-20",
+      certNumber: "5KPP-FV7w",
+      logo: "certifications/마이크로소프트Logo.png",
+      image: "certifications/mos-Powerpoint.jpg"
     }
   ],
   display: true

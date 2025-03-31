@@ -12,14 +12,14 @@ export default function CertificationCard({cardInfo, isDark}) {
   }
 
   const images = require.context("../../assets/images", true);
-  const test = "certifications/정보처리기사.png";
+
   return (
     <div className={isDark ? "dark-mode certificate-card" : "certificate-card"}>
       <div className="cert-card-header">
         <h3 className="cert-title">{cardInfo.name}</h3>
         <img
           className="cert-logo"
-          src={require("../../assets/images/airbnbLogo.png")}
+          src={images(`./${cardInfo.logo}`)}
           alt="logo"
         />
       </div>
@@ -49,7 +49,7 @@ export default function CertificationCard({cardInfo, isDark}) {
         >
           취득일자:{cardInfo.date}
         </p>
-        <p
+        {/* <p
           className={
             isDark
               ? "dark-mode certificate-detail-issuer"
@@ -57,28 +57,13 @@ export default function CertificationCard({cardInfo, isDark}) {
           }
         >
           {cardInfo.issuer}
-        </p>
+        </p> */}
         {/* <h5 className={isDark ? "dark-mode card-title" : "card-title"}>
           {cardInfo.image}
-        </h5>
+        </h5> */}
         <p className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
           {cardInfo.issuer}
-        </p> */}
-      </div>
-      <div className="certificate-card-footer">
-        {/* {cardInfo.footer.map((v, i) => {
-          return (
-            <span
-              key={i}
-              className={
-                isDark ? "dark-mode certificate-tag" : "certificate-tag"
-              }
-              onClick={() => openUrlInNewTab(v.url, v.name)}
-            >
-              {v.name}
-            </span>
-          );
-        })} */}
+        </p>
       </div>
     </div>
   );

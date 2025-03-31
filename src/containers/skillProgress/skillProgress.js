@@ -16,7 +16,6 @@ export default function StackProgress() {
         <div className="skills-container">
           <div className="skills-bar">
             <h1 className="skills-heading">📊 기술 영역별 숙련도</h1>
-            {/* <SkillDonutChart /> */}
             <div className="donut-chart-container">
               <div className="donut-row">
                 {techStack.experience.slice(0, 3).map((exp, idx) => (

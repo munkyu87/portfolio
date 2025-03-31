@@ -25,15 +25,17 @@ export default function Certification() {
             >
               {certificationSection.title}
             </h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode subTitle certification-subtitle"
-                  : "subTitle certification-subtitle"
-              }
-            >
-              {certificationSection.subtitle}
-            </p>
+            {!!certificationSection.subtitle && (
+              <p
+                className={
+                  isDark
+                    ? "dark-mode subTitle certification-subtitle"
+                    : "subTitle certification-subtitle"
+                }
+              >
+                {certificationSection.subtitle}
+              </p>
+            )}
           </div>
           <div className="certification-cards-div">
             {certificationSection.certificationsCards.map((card, i) => {
