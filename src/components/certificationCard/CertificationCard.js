@@ -49,18 +49,6 @@ export default function CertificationCard({cardInfo, isDark}) {
         >
           취득일자:{cardInfo.date}
         </p>
-        {/* <p
-          className={
-            isDark
-              ? "dark-mode certificate-detail-issuer"
-              : "certificate-detail-issuer"
-          }
-        >
-          {cardInfo.issuer}
-        </p> */}
-        {/* <h5 className={isDark ? "dark-mode card-title" : "card-title"}>
-          {cardInfo.image}
-        </h5> */}
         <p className={isDark ? "dark-mode card-subtitle" : "card-subtitle"}>
           {cardInfo.issuer}
         </p>

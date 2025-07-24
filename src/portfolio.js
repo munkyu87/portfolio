@@ -289,33 +289,184 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "프로젝트",
+  subtitle: "참여하거나 개인적으로 진행한 주요 프로젝트입니다.",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/projects/animalRace.png"),
+      platform: "Web",
+      projectName: "빙글빙글 동물레이스",
+      projectDesc: "귀여운 동물들이 달리는 랜덤 레이싱 게임",
+      contribution: "100%",
+      tech: ["React", "TypeScript", "framer-motion", "MobX", "..."],
+      longDesc: `- 캐릭터와 바퀴 수를 자유롭게 선택
+      - 각 캐릭터마다 고유한 스킬 발동
+      - 랜덤 요소가 가미된 예측불가 레이스
+      - 실시간 순위와 생동감 넘치는 애니메이션`,
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
+          name: "TechBlog",
+          url: "https://munkyu87.github.io/sideproject/animalRace/"
+        },
+        {
+          name: "Play Game",
+          url: "https://munkyu87.github.io/race/"
         }
-        //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/projects/myPeople.png"),
+      platform: "App",
+      projectName: "MyPeople",
+      projectDesc: "나의 사람들 정보, 일정을 관리",
+      contribution: "100%",
+      tech: [
+        "React Native",
+        "TypeScript",
+        "Redux Toolkit",
+        "AsyncStorage",
+        "react-native-calendars",
+        "Webview",
+        "..."
+      ],
+      longDesc: `- 연락처 관리
+      - 캘린더 일정 관리
+      - 연락 기능(전화 걸기, SMS 보내기, 이메일 보내기)
+      - MBTI 연동
+      `,
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://nextu.se/"
+          name: "TechBlog",
+          url: "https://munkyu87.github.io/sideproject/MyPeople/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/projects/sallime.png"),
+      platform: "App",
+      projectName: "AI 마을살림e",
+      projectDesc: "AI 경로당 ERP",
+      contribution: "FrontEnd 80%, BackEnd 20%, Database 50%",
+      tech: [
+        "React Native",
+        "TypeScript",
+        "MobX",
+        "OCR(Azure, GoogleCloudVision)",
+        "Java Spring",
+        "AI(Azure, ChatGPT)",
+        "Gemini",
+        "Vision Camera",
+        "MySql",
+        "eas",
+        "..."
+      ],
+      longDesc: `- 회계 및 운영관리
+      - 경로당 물품관리
+      - 물품 신청 및 A/S 관리
+      - 시설보수 관리
+      - 영수증, 지출결의서, 보고서 등 수많은 문서를 AI에 기반해 자동 관리
+      - 고령의 사용자 대상 UI, UX`,
+      footerLink: [
+        {
+          name: "Visit WebSite",
+          url: "https://www.sallim-e.com/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/projects/coupangPOS.png"),
+      platform: "Windows",
+      projectName: "CoupangPOS",
+      projectDesc: "주문, 결제, 매장 관리를 더 빠르고 쉽게",
+      contribution: "FrontEnd 40%",
+      tech: [
+        "React Native",
+        "React",
+        "TypeScript",
+        "C#",
+        "MySql",
+        "Selenium",
+        "Appium",
+        "ARP",
+        "..."
+      ],
+      longDesc: `- React Native를 활용하여 Windows 및 iOS 환경에서 전반적인 POS 프론트엔드 개발
+      - 주문/결제/포인트/정산/매출 등을 통합 관리하는 Sales Dashboard 구현
+      - 동일 네트워크상 단말기 자동 연동 구현
+      - Selenium, Appium 기반의 자동화 환경 구축
+      - 고객만족도 조사(NPS) 기능 구현
+      - 카카오톡 전송 시스템 구축`,
+      footerLink: [
+        {
+          name: "Visit WebSite",
+          url: "https://www.coupangpos.com/pos"
         }
       ]
     }
+    // {
+    //   image: require("./assets/images/saayaHealthLogo.webp"),
+    //   projectName: "Saayahealth",
+    //   projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    //   longDesc:
+    //     "OpenAI 요약 모델과 Google TTS를 연동한 사이드 프로젝트로, React Native와 Spring Boot를 기반으로 개발했습니다.",
+    //   contribution: "프론트엔드 100%, 백엔드 설계 일부",
+    //   tech: ["React Native", "Spring Boot", "OpenAI", "Google TTS"],
+    //   image: require("./assets/images/airbnbLogo.png"),
+    //   moreImage: require("./assets/images/codeInLogo.webp"),
+    //   footerLink: [
+    //     {
+    //       name: "Visit Website",
+    //       url: "http://saayahealth.com/"
+    //     }
+    //     //  you can add extra buttons here.
+    //   ]
+    // },
+    // {
+    //   image: require("./assets/images/saayaHealthLogo.webp"),
+    //   projectName: "Saayahealth",
+    //   projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    //   longDesc:
+    //     "OpenAI 요약 모델과 Google TTS를 연동한 사이드 프로젝트로, React Native와 Spring Boot를 기반으로 개발했습니다.",
+    //   contribution: "프론트엔드 100%, 백엔드 설계 일부",
+    //   tech: ["React Native", "Spring Boot", "OpenAI", "Google TTS"],
+    //   image: require("./assets/images/airbnbLogo.png"),
+    //   moreImage: require("./assets/images/codeInLogo.webp"),
+    //   footerLink: [
+    //     {
+    //       name: "Visit Website",
+    //       url: "http://saayahealth.com/"
+    //     }
+    //     //  you can add extra buttons here.
+    //   ]
+    // }
   ],
+  // title: "Big Projects",
+  // subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  // projects: [
+  //   {
+  //     image: require("./assets/images/saayaHealthLogo.webp"),
+  //     projectName: "Saayahealth",
+  //     projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  //     footerLink: [
+  //       {
+  //         name: "Visit Website",
+  //         url: "http://saayahealth.com/"
+  //       }
+  //       //  you can add extra buttons here.
+  //     ]
+  //   },
+  //   {
+  //     image: require("./assets/images/nextuLogo.webp"),
+  //     projectName: "Nextu",
+  //     projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+  //     footerLink: [
+  //       {
+  //         name: "Visit Website",
+  //         url: "http://nextu.se/"
+  //       }
+  //     ]
+  //   }
+  // ],
   display: true // Set false to hide this section, defaults to true
 };
 

@@ -1,7 +1,7 @@
 @import "../../_globalColor";
 
 .card-image {
-  max-width: 100%;
+  // max-width: 100%;
   height: auto;
   width: 250px;
 }
@@ -18,14 +18,88 @@
   line-height: 1.5rem;
 }
 .project-card {
-  display: flex;
-  flex-direction: column;
-  background-color: $lightBackground2;
-  padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid $lightBorder1;
-  justify-content: center;
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 2%;
 }
+
+.scroll-button {
+  // position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0.5rem;
+
+  &.left {
+    left: 0.5rem;
+  }
+  &.right {
+    right: 0.5rem;
+  }
+}
+.fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+  z-index: 5;
+
+  &.left-fade {
+    left: 0;
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+  }
+
+  &.right-fade {
+    right: 0;
+    background: linear-gradient(to left, #fff, rgba(255, 255, 255, 0));
+  }
+}
+.toggle-button {
+  margin: 0.5rem auto;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+
+  &.expand {
+    background-color: #4f46e5;
+    margin-bottom: 1rem;
+    color: #fff;
+
+    &:hover {
+      background-color: #4338ca;
+    }
+  }
+
+  &.collapse {
+    background-color: #e0e7ff;
+    color: #1e3a8a;
+
+    &:hover {
+      background-color: #c7d2fe;
+    }
+  }
+}
+//   display: flex;
+//   flex-direction: column;
+//   background-color: $lightBackground2;
+//   padding: 1.5rem;
+//   border-radius: 10px;
+//   border: 1px solid $lightBorder1;
+//   justify-content: center;
+// }
 .project-card-light {
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   -webkit-transition: all 0.3s ease;
@@ -51,19 +125,90 @@
 }
 .project-image {
   position: relative;
+  width: 250px;
   height: 250px;
+  border-radius: 50%;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto; // 가운데 정렬
+  border: 2px solid #ccc;
+  // box-shadow: 0 4px 6px darkblue;
 }
 
+.project-image img {
+  width: 100%;
+  height: 100%;
+  // object-fit: cover;
+  object-fit: contain;
+  // transform: scale(0.85);
+  border-radius: 50%;
+}
+.platform-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  color: white;
+  vertical-align: middle;
+}
+
+// Web
+.platform-tag.web {
+  background-color: #f59e0b;
+}
+
+// App
+.platform-tag.app {
+  background-color: #10b981;
+}
+
+// ERP
+.platform-tag.erp {
+  background-color: #3b82f6;
+}
+
+// Windows
+.platform-tag.windows {
+  background-color: #6366f1; // 보라색
+}
 .projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  // scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  // optional: 스크롤바 없애기 (크롬/사파리)
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.project-scroll-wrapper {
+  position: relative;
+  // flex: 1;
+  // flex-direction: row;
+  overflow: hidden;
 }
 
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  // border: 1px solid black;
+
+  &::-webkit-scrollbar {
+    display: none; // 스크롤바 제거
+  }
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 .project-card-footer span.project-tag {
   background: $buttonColor;
   color: $lightBackground3;
@@ -86,5 +231,58 @@
   .project-subtitle {
     font-size: 16px;
     text-align: center;
+  }
+}
+.project-more-detail {
+  text-align: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tech-tags-list {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tech-tag {
+  background-color: #e0e7ff;
+  color: #1e3a8a;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.long-desc-detail {
+  margin-top: 0.3rem;
+  padding-left: 0.5rem;
+  font-size: 0.8rem;
+  white-space: pre-line;
+}
+
+.more-image {
+  width: 100%;
+  max-height: 200px;
+  margin-top: 0.5rem;
+  object-fit: contain;
+}
+.toggle-button {
+  margin-top: 1rem;
+  margin-left: auto;
+  display: block;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #4f46e5;
   }
 }
