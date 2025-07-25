@@ -346,7 +346,9 @@ const bigProjects = {
       platform: "App",
       projectName: "AI 마을살림e",
       projectDesc: "AI 경로당 ERP",
-      contribution: "FrontEnd 80%, BackEnd 20%, Database 50%",
+      contribution: `FrontEnd 80% 
+      BackEnd 20% 
+      Database 50%`,
       tech: [
         "React Native",
         "TypeScript",
@@ -400,6 +402,35 @@ const bigProjects = {
         {
           name: "Visit WebSite",
           url: "https://www.coupangpos.com/pos"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/projects/rental.png"),
+      platform: "Web",
+      projectName: "건설근로 단말기 Rental",
+      projectDesc: "재고관리 렌탈 프로그램",
+      contribution: `FrontEnd 100% 
+      BackEnd 50% 
+      Database 50%`,
+      tech: [
+        "React",
+        "TypeScript",
+        "MySql",
+        "Java Spring",
+        "RPA",
+        "..."
+      ],
+      longDesc: `- 임대관리(임대, 교환, 연장, 횟, 결제)
+      - 입고관리
+      - 판매관리
+      - 재고관리
+      - 수리
+      - 대상업체 자동 이메일 발송 시스템 구축`,
+      footerLink: [
+        {
+          name: "Visit WebSite",
+          url: "http://ec2-43-200-67-228.ap-northeast-2.compute.amazonaws.com:9020/"
         }
       ]
     }

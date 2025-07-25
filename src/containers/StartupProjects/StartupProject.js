@@ -58,10 +58,17 @@ export default function StartupProject() {
           >
             {bigProjects.subtitle}
           </p>
-          <div className="project-scroll-wrapper">
-            <button className="scroll-button left" onClick={() => scroll(-1)}>
+          <div className={
+              isDark
+                ? "project-scroll-wrapper-dark"
+                : "project-scroll-wrapper-white"
+            }>
+            {/* <button className="scroll-button left" onClick={() => scroll(-1)}>
               ←
-            </button>
+            </button> */}
+            <button className="scroll-button left" onClick={() => scroll(-1)}>
+    <i className="fas fa-chevron-left"></i>
+  </button>
 
             <div className="scroll-container" ref={scrollRef}>
               {bigProjects.projects.map((project, i) => {
@@ -120,9 +127,12 @@ export default function StartupProject() {
                       </button>
                       {openStates[i] && (
                         <div className="project-more-detail">
-                          <p>
-                            <strong>기여도:</strong> {project.contribution}
-                          </p>
+                        <div style={{marginTop: "18px"}}>
+                            <strong>기여도</strong> 
+                            <p className="contribution-detail">
+                              {project.contribution}
+                            </p>
+                          </div>
                           {project.tech && Array.isArray(project.tech) ? (
                             <div className="tech-tags">
                               <strong>사용 기술</strong>
@@ -179,8 +189,14 @@ export default function StartupProject() {
             </div>
 
             <button className="scroll-button right" onClick={() => scroll(1)}>
+    <i className="fas fa-chevron-right"></i>
+  </button>
+
+        <div className="fade left-fade" />
+        <div className="fade right-fade" />
+            {/* <button className="scroll-button right" onClick={() => scroll(1)}>
               →
-            </button>
+            </button> */}
 
             {/* <div className="fade left-fade" />
             <div className="fade right-fade" /> */}
