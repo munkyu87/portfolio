@@ -13,7 +13,7 @@ export default function Certification() {
 
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="certification">
+      <div className="main" id="certificartions">
         <div className="certification-main-div">
           <div className="certification-header">
             <h1

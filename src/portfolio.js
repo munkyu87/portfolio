@@ -210,6 +210,7 @@ const techStack = {
       color: "#e74a3b"
     }
   ],
+  display: true,
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
 };
 
@@ -354,6 +355,10 @@ const bigProjects = {
         "TypeScript",
         "MobX",
         "OCR(Azure, GoogleCloudVision)",
+        "TTS",
+        "STT",
+        "RAG",
+        "MCP",
         "Java Spring",
         "AI(Azure, ChatGPT)",
         "Gemini",
@@ -367,7 +372,10 @@ const bigProjects = {
       - 물품 신청 및 A/S 관리
       - 시설보수 관리
       - 영수증, 지출결의서, 보고서 등 수많은 문서를 AI에 기반해 자동 관리
-      - 고령의 사용자 대상 UI, UX`,
+      - 출석관리
+      - 수요현황 조사
+      - AI 음성인식
+      - 고령의 사용자 대상 UI, UX 등 ..`,
       footerLink: [
         {
           name: "Visit WebSite",
@@ -433,71 +441,118 @@ const bigProjects = {
           url: "http://ec2-43-200-67-228.ap-northeast-2.compute.amazonaws.com:9020/"
         }
       ]
-    }
-    // {
-    //   image: require("./assets/images/saayaHealthLogo.webp"),
-    //   projectName: "Saayahealth",
-    //   projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    //   longDesc:
-    //     "OpenAI 요약 모델과 Google TTS를 연동한 사이드 프로젝트로, React Native와 Spring Boot를 기반으로 개발했습니다.",
-    //   contribution: "프론트엔드 100%, 백엔드 설계 일부",
-    //   tech: ["React Native", "Spring Boot", "OpenAI", "Google TTS"],
-    //   image: require("./assets/images/airbnbLogo.png"),
-    //   moreImage: require("./assets/images/codeInLogo.webp"),
-    //   footerLink: [
-    //     {
-    //       name: "Visit Website",
-    //       url: "http://saayahealth.com/"
-    //     }
-    //     //  you can add extra buttons here.
-    //   ]
-    // },
-    // {
-    //   image: require("./assets/images/saayaHealthLogo.webp"),
-    //   projectName: "Saayahealth",
-    //   projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    //   longDesc:
-    //     "OpenAI 요약 모델과 Google TTS를 연동한 사이드 프로젝트로, React Native와 Spring Boot를 기반으로 개발했습니다.",
-    //   contribution: "프론트엔드 100%, 백엔드 설계 일부",
-    //   tech: ["React Native", "Spring Boot", "OpenAI", "Google TTS"],
-    //   image: require("./assets/images/airbnbLogo.png"),
-    //   moreImage: require("./assets/images/codeInLogo.webp"),
-    //   footerLink: [
-    //     {
-    //       name: "Visit Website",
-    //       url: "http://saayahealth.com/"
-    //     }
-    //     //  you can add extra buttons here.
-    //   ]
-    // }
+    },
+    {
+      image: require("./assets/images/projects/evcare.png"),
+      platform: "windows",
+      projectName: "EVCare 보험청구 관리 시스템",
+      projectDesc: "공급망 관리(SCM) 및 발주/입고/재고 통합 관리 웹 시스템",
+      contribution: `Product Owner 역할 수행
+      서비스 기획 및 요구사항 정의 60%
+      사용자 여정/프로세스 설계 60%
+      디자인·개발 협업 주도`,
+      tech: [
+        "React Native Windows",
+        "C#",
+      ],
+      longDesc: `- 보험금 청구 프로세스
+      - 재증명 발급 프로세스
+      - 빠른청구 프로세스
+      - 간편청구(EMR) 프로세스 등`,
+    },
+    {
+      image: require("./assets/images/projects/emax.png"),
+      platform: "Windows",
+      projectName: "가구점 ERP 시스템",
+      projectDesc: "가구점 대상 유통 ERP",
+      contribution: `ERP 화면 80% 
+      DB 설계 및 개발 80%`,
+      tech: [
+        "Emax",
+        "VB.net",
+        "MS-SQL",
+        "..."
+      ],
+      longDesc: `- 판매관리
+      - 재고관리
+      - 고객관리
+      - 무역관리
+      - 정산관리
+      - 배송관리 구축 개발
+      - Franchise관리 구축 개발
+      - 적용 업체: 인아트, 이노메싸`,
+    },
+    {
+      image: require("./assets/images/projects/erp.png"),
+      platform: "Windows",
+      projectName: "기업 통합 ERP 시스템",
+      projectDesc: "매입·매출·재고·정산 중심의 기업용 통합 ERP 시스템",
+      contribution: `ERP 화면 60% 
+      DB 설계 및 개발 60%`,
+      tech: [
+        "Emax",
+        "VB.net",
+        "MS-SQL",
+        "MySQL",
+        "..."
+      ],
+      longDesc: `- 매입관리
+      - 매출관리
+      - 재고관리
+      - 고객관리
+      - 정산관리
+      - 적용 업체: 젠틀몬스터, 혜림원, 쏘시오보떼, 디벨롭리스온 등`,
+    },
+    {
+      image: require("./assets/images/projects/funeralHall.png"), // 적절한 이미지로 교체
+      platform: "Windows",
+      projectName: "장례식장 ERP 시스템",
+      projectDesc: "장례식장 통합 정산 및 판매 ERP 시스템",
+      contribution: "ERP 화면 및 DB 개발 40%",
+      tech: [
+        "C#.Net",
+        "MS-SQL",
+        "..."
+      ],
+      longDesc: `- 장례식장 대상 통합 정산 솔루션 개발
+      - 기준정보 관리(사용자, 거래처, 품목, 세트) 모듈 개발
+      - 매입/재고 모듈 (매입등록/수정, 실재고 이월, 세트관리 등) 개발
+      - 판매/고인/빈소 관리 기능 개발
+      - 정산 모듈 (빈소정산, 퇴실 정산 등) 개발
+      - LCD 전광판 연동 화면 구성
+      - 적용 병원: 고대병원(안산,안암,구로), 분당차병원, 중앙보훈병원, 수원연화장, 평택병원, 인천사랑병원, 더바른, 하남시마루공원 등`,
+    },
+    {
+      image: require("./assets/images/projects/yangjisa.png"), // 적절한 이미지로 교체
+      platform: "Web",
+      projectName: "SCM 시스템",
+      projectDesc: "공급망 관리(SCM) 및 발주/입고/재고 통합 관리 웹 시스템",
+      contribution: "DB 설계 및 쿼리/프로시저 개발 80%",
+      tech: [
+        "MySQL",
+        "MS-SQL",
+      ],
+      longDesc: `- SCM 프로세스(발주, 입고, 출고, 재고)의 전체 흐름에 맞춘 DB 스키마 설계 및 구조 정비
+      - 대량 데이터 기반의 복잡한 조회/집계 로직 쿼리 개발
+      - 발주, 입고, 물류 이동, 재고관리 등 주요 기능에 필요한 Stored Procedure 및 View 개발
+      - 성능 병목을 유발하는 쿼리 최적화 및 인덱스 전략 수립
+      - ERP와의 데이터 동기화를 위한 테이블 구조 개선 및 배치 로직 반영
+      - 운영 중 발생하는 데이터 이슈 분석 및 DB 차원의 문제 해결
+      - 적용 업체: 위드랜드, 양지사 등`,
+    },
+    {
+      projectName: "그 외..",
+      projectDesc: "주 참여 프로젝트 외에 다수의 기술 작업 수행",
+      longDesc: `- 삼성 SmartThings 스마트 플러그 API 연동
+      - Aparch SuperSet 대시보드 DB 스키마 연동 구현
+      - 통계 화면용 SQL 쿼리 및 집계 로직 설계
+      - Weather(Open-Meteo) API 연동
+      - VisionCamera 기반 촬영·미리보기 공통 컴포넌트 구현
+      - EAS(Build, Submit) 환경 구축 및 Android/iOS 자동 빌드
+      - RN앱 Webview → Web ↔ React Native 양방향 통신 브릿지 구현
+      - Naver News API 연동 시도`,
+    },
   ],
-  // title: "Big Projects",
-  // subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
-  // projects: [
-  //   {
-  //     image: require("./assets/images/saayaHealthLogo.webp"),
-  //     projectName: "Saayahealth",
-  //     projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-  //     footerLink: [
-  //       {
-  //         name: "Visit Website",
-  //         url: "http://saayahealth.com/"
-  //       }
-  //       //  you can add extra buttons here.
-  //     ]
-  //   },
-  //   {
-  //     image: require("./assets/images/nextuLogo.webp"),
-  //     projectName: "Nextu",
-  //     projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-  //     footerLink: [
-  //       {
-  //         name: "Visit Website",
-  //         url: "http://nextu.se/"
-  //       }
-  //     ]
-  //   }
-  // ],
   display: true // Set false to hide this section, defaults to true
 };
 

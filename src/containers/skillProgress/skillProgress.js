@@ -13,7 +13,7 @@ export default function StackProgress() {
   if (techStack.viewSkillBars) {
     return (
       <Fade bottom duration={1000} distance="20px">
-        <div className="skills-container">
+        <div className="skills-container" id="techStack">
           <div className="skills-bar">
             <h1 className="skills-heading">📊 기술 영역별 숙련도</h1>
             <div className="donut-chart-container">

@@ -12,7 +12,7 @@ const techStack = [
 export default function SkillDonutChart() {
   return (
     <div className="donut-chart-container">
-      <h2 className="donut-title">📊 기술 영역별 숙련도</h2>
+      <h2 className="donut-title">📊 기술 영역별 2숙련도</h2>
       <div className="donut-charts">
         {techStack.map((stack, idx) => (
           <div key={idx} className="donut-item">

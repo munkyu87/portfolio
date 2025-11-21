@@ -127,12 +127,14 @@ export default function StartupProject() {
                       </button>
                       {openStates[i] && (
                         <div className="project-more-detail">
-                        <div style={{marginTop: "18px"}}>
-                            <strong>기여도</strong> 
-                            <p className="contribution-detail">
-                              {project.contribution}
-                            </p>
-                          </div>
+                          {project.contribution &&
+                            <div style={{marginTop: "18px"}}>
+                              <strong>기여도</strong> 
+                              <p className="contribution-detail">
+                                {project.contribution}
+                              </p>
+                            </div>
+                          }
                           {project.tech && Array.isArray(project.tech) ? (
                             <div className="tech-tags">
                               <strong>사용 기술</strong>

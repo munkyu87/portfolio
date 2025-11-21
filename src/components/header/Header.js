@@ -7,7 +7,10 @@ import {
   greeting,
   workExperiences,
   skillsSection,
+  socialMediaLinks,
+  techStack,
   openSource,
+  bigProjects,
   blogSection,
   talkSection,
   achievementSection,
@@ -17,10 +20,12 @@ import {
 
 function Header() {
   const {isDark} = useContext(StyleContext);
-  const viewExperience = workExperiences.display;
-  const viewOpenSource = openSource.display;
+  // const viewExperience = workExperiences.display;
+  // const viewOpenSource = openSource.display;
   const viewSkills = skillsSection.display;
-  const viewAchievement = achievementSection.display;
+  const viewTechStack = techStack.display;
+  // const viewAchievement = achievementSection.display;
+  const viewProjects = bigProjects.display;
   const viewCertification = certificationSection.display;
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
@@ -48,21 +53,31 @@ function Header() {
               <a href="#skills">Skills</a>
             </li>
           )}
-          {viewExperience && (
+          {viewTechStack && (
+            <li>
+              <a href="#techStack">TechStack</a>
+            </li>
+          )}
+          {viewProjects && (
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+          )}
+          {/* {viewExperience && (
             <li>
               <a href="#experience">Work Experiences</a>
             </li>
-          )}
-          {viewOpenSource && (
+          )} */}
+          {/* {viewOpenSource && (
             <li>
               <a href="#opensource">Open Source</a>
             </li>
-          )}
-          {viewAchievement && (
+          )} */}
+          {/* {viewAchievement && (
             <li>
               <a href="#achievements">Achievements</a>
             </li>
-          )}
+          )} */}
           {viewCertification && (
             <li>
               <a href="#certificartions">Certifcations</a>
@@ -70,19 +85,21 @@ function Header() {
           )}
           {viewBlog && (
             <li>
-              <a href="#blogs">Blogs</a>
+              <a href={socialMediaLinks.blog} target="_blank" rel="noopener noreferrer">
+                Blogs
+              </a>
             </li>
           )}
-          {viewTalks && (
+          {/* {viewTalks && (
             <li>
               <a href="#talks">Talks</a>
             </li>
-          )}
-          {viewResume && (
+          )} */}
+          {/* {viewResume && (
             <li>
               <a href="#resume">Resume</a>
             </li>
-          )}
+          )} */}
           <li>
             <a href="#contact">Contact Me</a>
           </li>
