@@ -97,12 +97,12 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       skillName: "Oracle",
-      icon: "https://skillicons.dev/icons?i=oracle",
+      icon: "https://skillicons.dev/icons?i=mysql",
       level: "gold"
     },
     {
       skillName: "ERP",
-      icon: "https://skillicons.dev/icons?i=csharp",
+      icon: "https://skillicons.dev/icons?i=githubactions",
       level: "gold"
     },
     {
@@ -112,12 +112,22 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       skillName: "appium",
-      icon: "https://skillicons.dev/icons?i=appium",
+      icon: "https://skillicons.dev/icons?i=selenium",
       level: "gold"
+    },
+    {
+      skillName: "AI",
+      icon: "https://skillicons.dev/icons?i=ai",
+      level: "silver"
     },
     {
       skillName: "Java",
       icon: "https://skillicons.dev/icons?i=java",
+      level: "silver"
+    },
+    {
+      skillName: "Spring",
+      icon: "https://skillicons.dev/icons?i=spring",
       level: "silver"
     },
     {
@@ -157,7 +167,7 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       toolName: "intelliJ",
-      icon: "https://skillicons.dev/icons?i=intelliJ"
+      icon: "https://skillicons.dev/icons?i=idea"
     },
     {
       toolName: "Git",
