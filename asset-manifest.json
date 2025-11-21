@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.998fdc8d.css",
-    "main.js": "/portfolio/static/js/main.5cf8ee56.js",
+    "main.js": "/portfolio/static/js/main.a54cee6e.js",
     "static/css/64.bba8fa55.chunk.css": "/portfolio/static/css/64.bba8fa55.chunk.css",
     "static/js/64.56dc6704.chunk.js": "/portfolio/static/js/64.56dc6704.chunk.js",
     "static/css/769.b3cbb36b.chunk.css": "/portfolio/static/css/769.b3cbb36b.chunk.css",
@@ -14,11 +14,16 @@
     "static/media/mos-Powerpoint.jpg": "/portfolio/static/media/mos-Powerpoint.f6f2a88eb2ed9d2c446d.jpg",
     "static/media/coupangPOS.png": "/portfolio/static/media/coupangPOS.f2e6c8f72eae42ff71b9.png",
     "static/media/stanfordLogo.png": "/portfolio/static/media/stanfordLogo.5a8e3a0a00949c93a9b8.png",
+    "static/media/erp.png": "/portfolio/static/media/erp.6eebf79aa6457ce4f1b1.png",
     "static/media/harvardLogo.png": "/portfolio/static/media/harvardLogo.542dab89bfb35b7f5c0d.png",
     "static/media/myPeople.png": "/portfolio/static/media/myPeople.84ac5c2fcd13301ab9ed.png",
     "static/media/Montserrat-Regular.ttf": "/portfolio/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/yangjisa.png": "/portfolio/static/media/yangjisa.4707573e0956fa1e6503.png",
+    "static/media/funeralHall.png": "/portfolio/static/media/funeralHall.0de11b2d761bc631b7e9.png",
+    "static/media/emax.png": "/portfolio/static/media/emax.4c9077993e8bbbc0aa00.png",
     "static/media/rental.png": "/portfolio/static/media/rental.961902814526a5a240a3.png",
     "static/media/animalRace.png": "/portfolio/static/media/animalRace.ef674d77b0f76143e701.png",
+    "static/media/evcare.png": "/portfolio/static/media/evcare.78c23ae00070486d312e.png",
     "static/media/한국산업인력공단Logo.png": "/portfolio/static/media/한국산업인력공단Logo.c897f92d65c9c15a2d99.png",
     "static/media/Agustina.woff": "/portfolio/static/media/Agustina.eb0c59dda4cc308cba96.woff",
     "static/media/한국정보통신진흥협회Logo.png": "/portfolio/static/media/한국정보통신진흥협회Logo.70a2c84920261d638264.png",
@@ -45,7 +50,7 @@
     "static/media/googleAssistant.svg": "/portfolio/static/media/googleAssistant.3227e84a89a1650db619.svg",
     "static/media/talksCardBack.svg": "/portfolio/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
     "main.998fdc8d.css.map": "/portfolio/static/css/main.998fdc8d.css.map",
-    "main.5cf8ee56.js.map": "/portfolio/static/js/main.5cf8ee56.js.map",
+    "main.a54cee6e.js.map": "/portfolio/static/js/main.a54cee6e.js.map",
     "64.bba8fa55.chunk.css.map": "/portfolio/static/css/64.bba8fa55.chunk.css.map",
     "64.56dc6704.chunk.js.map": "/portfolio/static/js/64.56dc6704.chunk.js.map",
     "769.b3cbb36b.chunk.css.map": "/portfolio/static/css/769.b3cbb36b.chunk.css.map",
@@ -53,6 +58,6 @@
   },
   "entrypoints": [
     "static/css/main.998fdc8d.css",
-    "static/js/main.5cf8ee56.js"
+    "static/js/main.a54cee6e.js"
   ]
 }
