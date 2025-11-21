@@ -501,7 +501,7 @@ const bigProjects = {
       - 재고관리
       - 고객관리
       - 정산관리
-      - 적용 업체: 젠틀몬스터, 혜림원, 쏘시오보떼, 디벨롭리스온 등`,
+      - 적용 업체: 젠틀몬스터, 지씨바이오, 스페셜라이즈드, 혜림원, 쏘시오보떼, 디벨롭리스온 등`,
     },
     {
       image: require("./assets/images/projects/funeralHall.png"), // 적절한 이미지로 교체

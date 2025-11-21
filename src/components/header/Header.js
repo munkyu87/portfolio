@@ -80,7 +80,7 @@ function Header() {
           )} */}
           {viewCertification && (
             <li>
-              <a href="#certificartions">Certifcations</a>
+              <a href="#certificartions">Certifications</a>
             </li>
           )}
           {viewBlog && (
