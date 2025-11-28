@@ -83,6 +83,9 @@ function Header() {
               <a href="#certificartions">Certifications</a>
             </li>
           )}
+          <li>
+            <a href="#recentPosts">RecentPosts</a>
+          </li>
           {viewBlog && (
             <li>
               <a href={socialMediaLinks.blog} target="_blank" rel="noopener noreferrer">

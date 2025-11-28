@@ -45,6 +45,14 @@
   color: $subTitle;
 }
 
+.blog-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+
 /* Media Query */
 @media (max-width: 1380px) {
   .blog-header-text {
