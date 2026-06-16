@@ -1,0 +1,94 @@
+@import "../../_globalColor";
+
+.verification-main-div {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.verification-header {
+  margin-bottom: 2rem;
+}
+
+.verification-heading {
+  margin-bottom: 0.7rem;
+}
+
+.verification-subtitle {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.verification-cards-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.verification-card {
+  background-color: $lightBackground2;
+  box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border: 1px solid $lightBorder1;
+  transition: all 0.3s ease;
+}
+
+.verification-card:hover {
+  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+}
+
+.dark-mode.verification-card:hover {
+  box-shadow: $achievementCertificateCardHoverDark 0px 20px 30px -10px;
+}
+
+.verification-image-div {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
+.verification-image {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.verification-detail-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.verification-description {
+  color: $cardSubtitle;
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  margin-top: 0.6rem;
+}
+
+.verification-card-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.verification-tag {
+  background: $buttonColor;
+  color: $lightBackground3;
+  border-radius: 4px;
+  display: inline-flex;
+  font-size: 0.75rem;
+  height: 2em;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  line-height: 1.5;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0 0.75em;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.verification-tag:hover {
+  background: $buttonHover;
+}

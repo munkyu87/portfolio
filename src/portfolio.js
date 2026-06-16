@@ -92,12 +92,12 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       skillName: "MsSQL",
-      icon: "https://skillicons.dev/icons?i=mysql",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
       level: "gold"
     },
     {
       skillName: "Oracle",
-      icon: "https://skillicons.dev/icons?i=mysql",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
       level: "gold"
     },
     {
@@ -112,7 +112,7 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       skillName: "appium",
-      icon: "https://skillicons.dev/icons?i=selenium",
+      icon: "https://cdn.simpleicons.org/appium",
       level: "gold"
     },
     {
@@ -132,7 +132,7 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       skillName: "JPA",
-      icon: "https://skillicons.dev/icons?i=spring",
+      icon: "https://cdn.simpleicons.org/hibernate",
       level: "silver"
     },
     {
@@ -184,6 +184,18 @@ https://fontawesome.com/icons?d=gallery */
     {
       toolName: "Figma",
       icon: "https://skillicons.dev/icons?i=figma"
+    },
+    {
+      toolName: "Cursor",
+      icon: "https://cdn.simpleicons.org/cursor"
+    },
+    {
+      toolName: "Jira",
+      icon: "https://cdn.simpleicons.org/jira"
+    },
+    {
+      toolName: "Confluence",
+      icon: "https://cdn.simpleicons.org/confluence"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -303,6 +315,51 @@ const bigProjects = {
   title: "프로젝트",
   subtitle: "참여하거나 개인적으로 진행한 주요 프로젝트입니다.",
   projects: [
+    {
+      image: require("./assets/images/projects/nationalParkKiosk.png"),
+      platform: "App",
+      projectName: "국립공원 키오스크",
+      projectDesc: "React Native 기반 무인 주문/결제 키오스크",
+      contribution: "FrontEnd 100%",
+      tech: [
+        "React Native",
+        "JavaScript",
+        "KG Inicis",
+        "KISAgent",
+        "본인인증",
+        "Kiosk UI/UX",
+        "..."
+      ],
+      longDesc: `- 국립공원 현장 키오스크용 주문 화면 및 결제 UX 구현
+      - 상품 목록/수량 조절/금액 합계 등 핵심 주문 흐름 개발
+      - KG 이니시스 결제 모듈 연동 및 결제 승인/실패 처리 플로우 적용
+      - KISAgent 연동 기반 단말 결제 통신 처리 및 예외 케이스 대응
+      - 결제 전 본인인증 절차를 포함한 사용자 인증 흐름 반영
+      - 직관적인 버튼 구성과 가독성 중심 UI로 빠른 현장 사용성 확보
+      - 운영 환경을 고려한 단순하고 안정적인 화면 전환 구조 적용`,
+    },
+    {
+      image: require("./assets/images/projects/abcMartChat.png"),
+      platform: "App",
+      projectName: "ABC마트 앱 채팅",
+      projectDesc: "KLAT 채팅 솔루션 연동 기반 고객 상담 채팅 고도화",
+      contribution: `PM 역할 수행
+      (채팅 기능 기획/정의, 협업 및 연동 주도)`,
+      tech: [
+        "KLAT Chat Solution",
+        "채팅 기능 기획(PM)",
+        "서비스 정책 설계",
+        "운영/예외 시나리오 정의",
+        "..."
+      ],
+      longDesc: `- 개발 담당이 아닌 채팅 기능 PM 역할로 프로젝트 참여
+      - KLAT 채팅 솔루션 도입 및 앱 연동 범위/요구사항 정의
+      - 전체/안읽음 필터, 안읽은 메시지 뱃지, 최근 대화 시간 표시 기능 기획
+      - 채팅방 검색(사용자/대화 기준) 및 리스트 탐색 UX 플로우 설계
+      - 스와이프 액션(읽음 처리/나가기)과 같은 운영 편의 기능 정책 수립
+      - 아바타, 메시지 미리보기, 하단 탭 네비게이션 등 채팅 메인 화면 구조 정리
+      - 기획/디자인/개발 간 커뮤니케이션을 통한 릴리즈 품질 관리`,
+    },
     {
       image: require("./assets/images/projects/animalRace.png"),
       platform: "Web",
@@ -684,6 +741,40 @@ const certificationSection = {
   display: true
 };
 
+const verificationSection = {
+  title: "검증/인증",
+  subtitle: "프로젝트 수행 결과에 대한 공식 인증 및 감리 완료 이력",
+  cards: [
+    {
+      title: "중소기업 스마트서비스 지원사업 사업관리시스템 감리",
+      subtitle: "최종완료보고서 제출 및 최종 승인",
+      image: require("./assets/images/verifications/sme-audit-final-approval-1.png"),
+      description:
+        "보험청구 데이터 히스토리 기반 통합 처리 플랫폼 과제에 대해 사업관리시스템 내 감리 절차를 최종 승인까지 완료했습니다.",
+      footerLink: [
+        {
+          name: "증빙 화면 2",
+          url: require("./assets/images/verifications/sme-audit-final-approval-2.png")
+        }
+      ]
+    },
+    {
+      title: "GS 인증(TTA 1등급) 시험성적서",
+      subtitle: "경로당 ERP AI 마을살림e",
+      image: require("./assets/images/projects/sallime.png"),
+      description:
+        "AI 마을살림e 프로젝트의 GS 인증(TTA 1등급) 시험성적서 문서를 통해 품질 검증 이력을 확인할 수 있습니다.",
+      footerLink: [
+        {
+          name: "시험성적서 보기(PDF)",
+          url: "/docs/gs-tta-grade1-test-report-260212.pdf"
+        }
+      ]
+    }
+  ],
+  display: true
+};
+
 // Blogs Section
 
 const blogSection = {
@@ -779,6 +870,7 @@ export {
   bigProjects,
   achievementSection,
   certificationSection,
+  verificationSection,
   blogSection,
   talkSection,
   podcastSection,

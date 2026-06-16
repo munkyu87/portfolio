@@ -15,6 +15,7 @@ import {
   talkSection,
   achievementSection,
   certificationSection,
+  verificationSection,
   resumeSection
 } from "../../portfolio";
 
@@ -27,6 +28,7 @@ function Header() {
   // const viewAchievement = achievementSection.display;
   const viewProjects = bigProjects.display;
   const viewCertification = certificationSection.display;
+  const viewVerification = verificationSection.display;
   const viewBlog = blogSection.display;
   const viewTalks = talkSection.display;
   const viewResume = resumeSection.display;
@@ -81,6 +83,11 @@ function Header() {
           {viewCertification && (
             <li>
               <a href="#certificartions">Certifications</a>
+            </li>
+          )}
+          {viewVerification && (
+            <li>
+              <a href="#verification">Verification</a>
             </li>
           )}
           <li>

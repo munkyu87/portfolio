@@ -6,6 +6,7 @@ import StackProgress from "./skillProgress/skillProgress";
 import WorkExperience from "./workExperience/WorkExperience";
 import Projects from "./projects/Projects";
 import StartupProject from "./StartupProjects/StartupProject";
+import Verification from "./verification/Verification";
 import Achievement from "./achievement/Achievement";
 import Certification from "./certification/Certification";
 import RecentPosts from "./recentPosts/RecentPosts";
@@ -60,6 +61,7 @@ const Main = () => {
             {/* <WorkExperience /> */}
             {/* <Projects /> */}
             <StartupProject />
+            <Verification />
             {/* <Achievement /> */}
             <Certification />
             <RecentPosts />
