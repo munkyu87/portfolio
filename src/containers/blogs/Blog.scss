@@ -50,6 +50,19 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
+  position: relative;
+  line-height: 1.3;
+  padding-bottom: 0.9rem;
+}
+.blog-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 5px;
+  border-radius: 3px;
   background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 }
 

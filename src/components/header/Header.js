@@ -1,37 +1,54 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import Headroom from "react-headroom";
 import "./Header.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
 import {
   greeting,
-  workExperiences,
   skillsSection,
-  socialMediaLinks,
-  techStack,
-  openSource,
   bigProjects,
-  blogSection,
-  talkSection,
-  achievementSection,
-  certificationSection,
-  verificationSection,
-  resumeSection
+  sideProjects,
+  certificationSection
 } from "../../portfolio";
+
+const MENU = [
+  {id: "skills", label: "기술", show: skillsSection.display},
+  {id: "projects", label: "프로젝트", show: bigProjects.display},
+  {id: "sideProjects", label: "사이드", show: sideProjects.display},
+  {id: "proof", label: "인증·자격", show: certificationSection.display},
+  {id: "recentPosts", label: "블로그", show: true},
+  {id: "contact", label: "연락", show: true}
+].filter(item => item.show);
 
 function Header() {
   const {isDark} = useContext(StyleContext);
-  // const viewExperience = workExperiences.display;
-  // const viewOpenSource = openSource.display;
-  const viewSkills = skillsSection.display;
-  const viewTechStack = techStack.display;
-  // const viewAchievement = achievementSection.display;
-  const viewProjects = bigProjects.display;
-  const viewCertification = certificationSection.display;
-  const viewVerification = verificationSection.display;
-  const viewBlog = blogSection.display;
-  const viewTalks = talkSection.display;
-  const viewResume = resumeSection.display;
+  const [active, setActive] = useState("");
+  const [progress, setProgress] = useState(0);
+
+  // 스크롤 위치로 현재 섹션과 진행률 계산
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
+
+      let current = "";
+      MENU.forEach(({id}) => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.35) {
+          current = id;
+        }
+      });
+      // 맨 아래에서는 짧은 마지막 섹션(연락)을 활성화
+      if (max > 0 && window.scrollY >= max - 2) {
+        current = MENU[MENU.length - 1].id;
+      }
+      setActive(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, {passive: true});
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <Headroom>
@@ -50,69 +67,16 @@ function Header() {
           <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
         </label>
         <ul className={isDark ? "dark-menu menu" : "menu"}>
-          {viewSkills && (
-            <li>
-              <a href="#skills">Skills</a>
-            </li>
-          )}
-          {viewTechStack && (
-            <li>
-              <a href="#techStack">TechStack</a>
-            </li>
-          )}
-          {viewProjects && (
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-          )}
-          {/* {viewExperience && (
-            <li>
-              <a href="#experience">Work Experiences</a>
-            </li>
-          )} */}
-          {/* {viewOpenSource && (
-            <li>
-              <a href="#opensource">Open Source</a>
-            </li>
-          )} */}
-          {/* {viewAchievement && (
-            <li>
-              <a href="#achievements">Achievements</a>
-            </li>
-          )} */}
-          {viewCertification && (
-            <li>
-              <a href="#certificartions">Certifications</a>
-            </li>
-          )}
-          {viewVerification && (
-            <li>
-              <a href="#verification">Verification</a>
-            </li>
-          )}
-          <li>
-            <a href="#recentPosts">RecentPosts</a>
-          </li>
-          {viewBlog && (
-            <li>
-              <a href={socialMediaLinks.blog} target="_blank" rel="noopener noreferrer">
-                Blogs
+          {MENU.map(item => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className={active === item.id ? "active" : undefined}
+              >
+                {item.label}
               </a>
             </li>
-          )}
-          {/* {viewTalks && (
-            <li>
-              <a href="#talks">Talks</a>
-            </li>
-          )} */}
-          {/* {viewResume && (
-            <li>
-              <a href="#resume">Resume</a>
-            </li>
-          )} */}
-          <li>
-            <a href="#contact">Contact Me</a>
-          </li>
+          ))}
           <li>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a>
@@ -120,6 +84,10 @@ function Header() {
             </a>
           </li>
         </ul>
+        <div
+          className="header-progress"
+          style={{transform: `scaleX(${progress})`}}
+        ></div>
       </header>
     </Headroom>
   );

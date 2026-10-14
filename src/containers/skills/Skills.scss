@@ -25,6 +25,19 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
+  position: relative;
+  line-height: 1.3;
+  padding-bottom: 0.9rem;
+}
+.skills-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 5px;
+  border-radius: 3px;
   background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 }
 .subTitle {
@@ -63,5 +76,128 @@
   .skills-image-div {
     /* display: none; */
     order: 2;
+  }
+}
+
+// 분야별 기술 카드
+.sg-legend {
+  color: var(--ds-sub);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sg-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.sg-card {
+  grid-column: span 2;
+  padding: 22px 24px;
+  border: 1px solid var(--ds-line);
+  border-radius: 20px;
+  background: var(--ds-card);
+  box-shadow: var(--ds-shadow);
+
+  &.half {
+    grid-column: span 3;
+  }
+
+  &.wide {
+    grid-column: 1 / -1;
+  }
+
+  h3 {
+    margin: 0 0 2px;
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0 0 16px;
+    color: var(--ds-sub);
+    font-size: 13.5px;
+  }
+}
+
+.sg-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sg-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 72px;
+}
+
+.sg-tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--ds-line);
+  border-radius: 15px;
+  background: var(--ds-soft);
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    object-fit: contain;
+  }
+}
+
+.sg-icon.gold .sg-tile {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.12);
+}
+
+.sg-medal {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  font-size: 16px;
+}
+
+.sg-name {
+  color: var(--ds-sub);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .sg-card,
+  .sg-card.half {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .sg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sg-card,
+  .sg-card.half,
+  .sg-card.wide {
+    grid-column: auto;
+  }
+
+  .sg-icon {
+    width: 62px;
+  }
+
+  .sg-name {
+    font-size: 11px;
   }
 }

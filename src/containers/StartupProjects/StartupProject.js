@@ -1,209 +1,276 @@
-import React, {useContext, useState, useRef} from "react";
+import React, {useContext, useState} from "react";
 import "./StartupProjects.scss";
 import {bigProjects} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import ProjectModal from "../../components/projectModal/ProjectModal";
+import SectionHeader from "../../components/sectionHeader/SectionHeader";
 
-export default function StartupProject() {
-  const [openStates, setOpenStates] = useState(
-    Array(bigProjects.projects.length).fill(false)
+const MAX_CHIPS = 3;
+
+function PlatformTag({platform}) {
+  if (!platform) return null;
+  return (
+    <span className={`platform-tag ${platform.toLowerCase()}`}>{platform}</span>
   );
+}
 
-  // const scrollRef = useRef(null);
-  // const scrollLeft = () =>
-  //   scrollRef.current.scrollBy({left: -300, behavior: "smooth"});
-  // const scrollRight = () =>
-  //   scrollRef.current.scrollBy({left: 300, behavior: "smooth"});
-  const scrollRef = useRef();
+function TechChips({tech = [], max = MAX_CHIPS}) {
+  const list = tech.filter(t => t !== "...");
+  if (!list.length) return null;
+  return (
+    <div className="tech-chips">
+      {list.slice(0, max).map(t => (
+        <span key={t} className="tech-chip">
+          {t}
+        </span>
+      ))}
+      {list.length > max && (
+        <span className="tech-chip more">+{list.length - max}</span>
+      )}
+    </div>
+  );
+}
 
-  const scroll = direction => {
-    const scrollAmount = 300;
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
-        left: direction * scrollAmount,
-        behavior: "smooth"
-      });
+function Shot({project}) {
+  const count = project.images ? project.images.length : 0;
+  return (
+    <div className="pj-shot">
+      {project.image ? (
+        <img src={project.image} alt={project.projectName} />
+      ) : (
+        <i className="fas fa-ellipsis-h pj-shot-empty"></i>
+      )}
+      {count > 1 && (
+        <span className="gallery-badge">
+          <i className="fas fa-images"></i>
+          {count}
+        </span>
+      )}
+    </div>
+  );
+}
+
+function FooterLinks({links}) {
+  if (!links || !links.length) return null;
+  return (
+    <div className="pj-links">
+      {links.map(link => (
+        <a
+          key={link.name}
+          className="pj-link"
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={e => e.stopPropagation()}
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+// 카드 전체를 클릭/키보드로 열 수 있게
+const clickable = onOpen => ({
+  role: "button",
+  tabIndex: 0,
+  onClick: onOpen,
+  onKeyDown: e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onOpen();
     }
-  };
-
-  function openUrlInNewTab(url) {
-    if (!url) {
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
   }
+});
 
+function FeaturedCard({project, main, onOpen}) {
+  return (
+    <div
+      className={main ? "pj-feat is-main" : "pj-feat is-small"}
+      {...clickable(onOpen)}
+    >
+      <Shot project={project} />
+      <div className="pj-body">
+        <div className="pj-title">
+          {project.projectName}
+          <PlatformTag platform={project.platform} />
+        </div>
+        {project.highlights && (
+          <div className="pj-badges">
+            {project.highlights.map(h => (
+              <span
+                key={h}
+                className={h.startsWith("🏅") ? "pj-badge gold" : "pj-badge"}
+              >
+                {h}
+              </span>
+            ))}
+          </div>
+        )}
+        <p className="pj-desc">{project.projectDesc}</p>
+        <TechChips tech={project.tech} max={main ? 6 : 3} />
+        <span className="pj-more">자세히 보기 →</span>
+      </div>
+    </div>
+  );
+}
+
+function GridCard({project, onOpen}) {
+  return (
+    <div
+      className={project.image ? "pj-card" : "pj-card etc"}
+      {...clickable(onOpen)}
+    >
+      <Shot project={project} />
+      <div className="pj-body">
+        <div className="pj-title">
+          {project.projectName}
+          <PlatformTag platform={project.platform} />
+        </div>
+        <p className="pj-desc">{project.projectDesc}</p>
+        <TechChips tech={project.tech} />
+      </div>
+    </div>
+  );
+}
+
+function SideCard({project, onOpen}) {
+  return (
+    <div className="pj-side" {...clickable(onOpen)}>
+      <Shot project={project} />
+      <div className="pj-body">
+        <div className="pj-title">
+          {project.projectName}
+          <PlatformTag platform={project.platform} />
+        </div>
+        {project.status && (
+          <span className={`pj-status ${project.status.type}`}>
+            ● {project.status.label}
+          </span>
+        )}
+        <p className="pj-desc">{project.projectDesc}</p>
+        {project.highlights && (
+          <ul className="pj-highlights">
+            {project.highlights.map(h => (
+              <li key={h}>
+                <i className="fas fa-check"></i>
+                {h}
+              </li>
+            ))}
+          </ul>
+        )}
+        <TechChips tech={project.tech} max={4} />
+        <FooterLinks links={project.footerLink} />
+      </div>
+    </div>
+  );
+}
+
+export default function StartupProject({
+  section = bigProjects,
+  id = "projects"
+}) {
   const {isDark} = useContext(StyleContext);
-  if (!bigProjects.display) {
+  const [filter, setFilter] = useState("전체");
+  const [selected, setSelected] = useState(null);
+
+  if (!section.display) {
     return null;
   }
 
-  const toggleDetails = index => {
-    setOpenStates(prev =>
-      prev.map((isOpen, i) => (i === index ? !isOpen : isOpen))
-    );
-  };
+  const isSide = section.variant === "side";
+  const featured = isSide ? [] : section.projects.filter(p => p.featured);
+  const rest = isSide ? [] : section.projects.filter(p => !p.featured);
+
+  // 플랫폼별 개수 (플랫폼 없는 "그 외.." 카드는 전체에서만 표시)
+  const counts = {};
+  rest.forEach(p => {
+    if (p.platform) counts[p.platform] = (counts[p.platform] || 0) + 1;
+  });
+  const total = Object.values(counts).reduce((a, b) => a + b, 0);
+  const visible =
+    filter === "전체" ? rest : rest.filter(p => p.platform === filter);
+
+  // 섹션이 길어 기본 fraction(0.2)으로는 모바일에서 나타나지 않으므로 0
   return (
-    <Fade bottom duration={1000} distance="20px">
-      <div className="main" id="projects">
-        <div>
-          <h1 className="skills-heading">{bigProjects.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode project-subtitle"
-                : "subTitle project-subtitle"
-            }
-          >
-            {bigProjects.subtitle}
-          </p>
-          <div className={
-              isDark
-                ? "project-scroll-wrapper-dark"
-                : "project-scroll-wrapper-white"
-            }>
-            {/* <button className="scroll-button left" onClick={() => scroll(-1)}>
-              ←
-            </button> */}
-            <button className="scroll-button left" onClick={() => scroll(-1)}>
-    <i className="fas fa-chevron-left"></i>
-  </button>
+    <Fade bottom duration={1000} distance="20px" fraction={0}>
+      <div
+        className={
+          isDark
+            ? "main ds-section projects-section dark"
+            : "main ds-section projects-section"
+        }
+        id={id}
+      >
+        <SectionHeader
+          eyebrow={section.eyebrow}
+          title={section.title}
+          subtitle={section.subtitle}
+        />
 
-            <div className="scroll-container" ref={scrollRef}>
-              {bigProjects.projects.map((project, i) => {
-                return (
-                  <div
-                    key={i}
-                    className={
-                      isDark
-                        ? "dark-mode project-card project-card-dark"
-                        : "project-card project-card-light"
-                    }
-                  >
-                    {project.image ? (
-                      <div className="project-image">
-                        <img
-                          src={project.image}
-                          alt={project.projectName}
-                          className="card-image"
-                        ></img>
-                      </div>
-                    ) : null}
-                    <div className="project-detail">
-                      <h5
-                        className={
-                          isDark ? "dark-mode card-title" : "card-title"
-                        }
-                      >
-                        {project.projectName}
-                        <span
-                          className={`platform-tag ${
-                            project.platform
-                              ? project.platform.toLowerCase()
-                              : ""
-                          }`}
-                        >
-                          {project.platform}
-                        </span>
-                      </h5>
-                      <p
-                        className={
-                          isDark ? "dark-mode card-subtitle" : "card-subtitle"
-                        }
-                      >
-                        {project.projectDesc}
-                      </p>
-
-                      <button
-                        className={
-                          openStates[i]
-                            ? "toggle-button collapse"
-                            : "toggle-button expand"
-                        }
-                        onClick={() => toggleDetails(i)}
-                      >
-                        {openStates[i] ? "간략히 보기" : "자세히 보기"}
-                      </button>
-                      {openStates[i] && (
-                        <div className="project-more-detail">
-                          {project.contribution &&
-                            <div style={{marginTop: "18px"}}>
-                              <strong>기여도</strong> 
-                              <p className="contribution-detail">
-                                {project.contribution}
-                              </p>
-                            </div>
-                          }
-                          {project.tech && Array.isArray(project.tech) ? (
-                            <div className="tech-tags">
-                              <strong>사용 기술</strong>
-                              <div className="tech-tags-list">
-                                {project.tech.map((tech, i) => (
-                                  <span key={i} className="tech-tag">
-                                    {tech}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          ) : null}
-                          <div style={{marginTop: "18px"}}>
-                            <strong>상세 설명</strong>
-                            <p className="long-desc-detail">
-                              {project.longDesc}
-                            </p>
-                          </div>
-                          {project.moreImage && (
-                            <img
-                              src={project.moreImage}
-                              alt="상세이미지"
-                              className="more-image"
-                            />
-                          )}
-                        </div>
-                      )}
-                      {project.footerLink ? (
-                        <div className="project-card-footer">
-                          {project.footerLink.map((link, i) => {
-                            return (
-                              <span
-                                key={i}
-                                className={
-                                  isDark
-                                    ? "dark-mode project-tag"
-                                    : "project-tag"
-                                }
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  openUrlInNewTab(link.url);
-                                }}
-                              >
-                                {link.name}
-                              </span>
-                            );
-                          })}
-                        </div>
-                      ) : null}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
-            <button className="scroll-button right" onClick={() => scroll(1)}>
-    <i className="fas fa-chevron-right"></i>
-  </button>
-
-        <div className="fade left-fade" />
-        <div className="fade right-fade" />
-            {/* <button className="scroll-button right" onClick={() => scroll(1)}>
-              →
-            </button> */}
-
-            {/* <div className="fade left-fade" />
-            <div className="fade right-fade" /> */}
+        {isSide ? (
+          <div className="pj-side-grid">
+            {section.projects.map(p => (
+              <SideCard
+                key={p.projectName}
+                project={p}
+                onOpen={() => setSelected(p)}
+              />
+            ))}
           </div>
-        </div>
+        ) : (
+          <>
+            {featured.length > 0 && (
+              <div className="pj-featured">
+                {featured.map((p, i) => (
+                  <FeaturedCard
+                    key={p.projectName}
+                    project={p}
+                    main={i === 0}
+                    onOpen={() => setSelected(p)}
+                  />
+                ))}
+              </div>
+            )}
+
+            {Object.keys(counts).length > 1 && (
+              <div className="pj-filters">
+                {[["전체", total], ...Object.entries(counts)].map(
+                  ([name, n]) => (
+                    <button
+                      key={name}
+                      type="button"
+                      className={filter === name ? "pj-filter on" : "pj-filter"}
+                      onClick={() => setFilter(name)}
+                    >
+                      {name}
+                      <span>{n}</span>
+                    </button>
+                  )
+                )}
+              </div>
+            )}
+
+            <div className="pj-grid">
+              {visible.map(p => (
+                <GridCard
+                  key={p.projectName}
+                  project={p}
+                  onOpen={() => setSelected(p)}
+                />
+              ))}
+            </div>
+          </>
+        )}
+
+        {selected && (
+          <ProjectModal
+            project={selected}
+            isDark={isDark}
+            onClose={() => setSelected(null)}
+          />
+        )}
       </div>
     </Fade>
   );

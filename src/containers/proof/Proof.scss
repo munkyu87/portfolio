@@ -1,0 +1,147 @@
+.pf-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.pf-card {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  padding: 22px 24px;
+  border: 1px solid var(--ds-line);
+  border-radius: 20px;
+  background: var(--ds-card);
+  box-shadow: var(--ds-shadow);
+  color: var(--ds-text);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ds-shadow-hover);
+  }
+
+  &:focus-visible {
+    outline: 3px solid #4facfe;
+    outline-offset: 3px;
+  }
+}
+
+.pf-icon {
+  display: grid;
+  flex: 0 0 60px;
+  place-items: center;
+  height: 60px;
+  border-radius: 16px;
+  background: var(--ds-soft);
+  font-size: 26px;
+
+  &.gold {
+    background: rgba(245, 158, 11, 0.15);
+  }
+
+  &.blue {
+    background: rgba(59, 130, 246, 0.15);
+  }
+}
+
+.pf-text {
+  min-width: 0;
+
+  h3 {
+    margin: 0 0 4px;
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
+    color: var(--ds-sub);
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+}
+
+.pf-action {
+  margin-left: auto;
+  color: var(--ds-link);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pf-certs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pf-cert {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--ds-line);
+  border-radius: 16px;
+  background: var(--ds-card);
+
+  img {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--ds-line);
+    border-radius: 50%;
+    background: #fff;
+    object-fit: contain;
+  }
+
+  div {
+    min-width: 0;
+  }
+
+  b {
+    display: block;
+    font-size: 15.5px;
+  }
+
+  span {
+    color: var(--ds-sub);
+    font-size: 13px;
+  }
+}
+
+.pf-cert .pf-year {
+  margin-left: auto;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .pf-certs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .pf-cards,
+  .pf-certs {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-card {
+    flex-wrap: wrap;
+    padding: 18px;
+  }
+
+  .pf-action {
+    margin-left: 78px;
+  }
+}

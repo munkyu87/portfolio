@@ -1,0 +1,80 @@
+// 새 디자인 섹션 공통 색상 토큰 (다크 모드는 .dark)
+.ds-section {
+  --ds-card: #fff;
+  --ds-text: #111827;
+  --ds-sub: #6b7280;
+  --ds-line: #e5e7eb;
+  --ds-soft: #f5f7fb;
+  --ds-chip: #eef2ff;
+  --ds-chip-text: #3730a3;
+  --ds-accent: #55198b;
+  --ds-link: #55198b;
+  --ds-shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.18);
+  --ds-shadow-hover: 0 20px 40px -14px rgba(15, 23, 42, 0.28);
+
+  color: var(--ds-text);
+  word-break: keep-all;
+
+  &.dark {
+    --ds-card: #1e2433;
+    --ds-text: #fff;
+    --ds-sub: #9aa4b8;
+    --ds-line: #2c3445;
+    --ds-soft: #232a3b;
+    --ds-chip: #2a3350;
+    --ds-chip-text: #c7d2fe;
+    --ds-link: #c4b5fd;
+    --ds-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+    --ds-shadow-hover: 0 20px 40px -12px rgba(0, 0, 0, 0.75);
+  }
+}
+
+.ds-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.ds-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: #4facfe;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.ds-title {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.ds-subtitle {
+  margin: 8px 0 0;
+  color: var(--ds-sub, #6b7280);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ds-head-side {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .ds-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ds-title {
+    font-size: 28px;
+  }
+
+  .ds-subtitle {
+    font-size: 15px;
+  }
+}

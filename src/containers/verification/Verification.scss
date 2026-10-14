@@ -92,3 +92,12 @@
 .verification-tag:hover {
   background: $buttonHover;
 }
+
+.dark-mode.verification-tag {
+  background-color: $buttonColor;
+  color: $lightBackground3;
+}
+
+.dark-mode.verification-tag:hover {
+  background-color: $buttonHover;
+}

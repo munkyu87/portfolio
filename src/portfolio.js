@@ -21,12 +21,22 @@ const illustration = {
 
 const greeting = {
   username: "Munkyu Choi",
-  title: "안녕, 나는 최문규!",
+  title: "안녕하세요,",
+  highlight: "12년 차 개발자", // 그라데이션으로 강조되는 부분
+  name: "최문규입니다",
+  availability: "새로운 기회에 열려 있어요", // 비우면 배지 숨김
   subTitle: emoji(
-    "프론트엔드 개발자입니다. 하지만 백엔드와 인프라를 포함한 다양한 개발에 흥미가 많고, AI, 웹, DB, 모바일, ERP 시스템 등 여러 분야의 개발을 즐깁니다. 새로운 기술을 탐구하며 풀스택 개발자를 지향하고 있습니다."
+    "React·React Native로 웹·앱·키오스크를 만들고, Spring 백엔드와 DB, AI(OCR·STT·RAG)까지 서비스 전체를 다루는 12년 차 개발자입니다. ERP·POS·결제 연동처럼 현장에서 매일 쓰이는 시스템을 오래 만들어 왔습니다."
   ),
   // resumeLink:
   //   "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+  // 첫 화면 오른쪽 숫자 카드 (tone: blue | gold)
+  stats: [
+    {value: "12년", label: "개발 경력"},
+    {value: "10+", label: "실무 프로젝트", tone: "blue"},
+    {value: "🏅 1등급", label: "GS인증 (TTA)", tone: "gold"},
+    {value: "4", label: "웹 · 앱 · 키오스크 · ERP"}
+  ],
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -51,8 +61,9 @@ const socialMediaLinks = {
 // Skills Section
 
 const skillsSection = {
-  title: "✨ 내가 만들고 즐기는 것",
-  // subTitle: "주로 사용하는 개발",
+  eyebrow: "SKILLS",
+  title: "기술 스택",
+  subTitle: "분야별로 묶었어요. 메달은 실무에서 주력으로 쓰는 기술이에요.",
   // skillSubTitle: "주로 사용하는 도구",
   skills: [
     // emoji(
@@ -91,7 +102,7 @@ https://fontawesome.com/icons?d=gallery */
       level: "gold"
     },
     {
-      skillName: "MsSQL",
+      skillName: "MS-SQL",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
       level: "gold"
     },
@@ -102,23 +113,23 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       skillName: "ERP",
-      icon: "https://skillicons.dev/icons?i=githubactions",
+      icon: "https://api.iconify.design/mdi/office-building-cog-outline.svg?color=%230ea5e9",
       level: "gold"
     },
     {
-      skillName: "selenium",
+      skillName: "Selenium",
       icon: "https://skillicons.dev/icons?i=selenium",
       level: "gold"
     },
     {
-      skillName: "appium",
+      skillName: "Appium",
       icon: "https://cdn.simpleicons.org/appium",
       level: "gold"
     },
     {
       skillName: "AI",
-      icon: "https://skillicons.dev/icons?i=ai",
-      level: "silver"
+      icon: "https://api.iconify.design/mdi/brain.svg?color=%237c3aed",
+      level: "gold"
     },
     {
       skillName: "Java",
@@ -126,7 +137,7 @@ https://fontawesome.com/icons?d=gallery */
       level: "silver"
     },
     {
-      skillName: "Spring",
+      skillName: "Spring Boot",
       icon: "https://skillicons.dev/icons?i=spring",
       level: "silver"
     },
@@ -153,20 +164,105 @@ https://fontawesome.com/icons?d=gallery */
     {
       skillName: "AWS",
       icon: "https://skillicons.dev/icons?i=aws",
-      level: "bronze"
+      level: "silver"
+    },
+    {
+      skillName: "Kotlin",
+      icon: "https://skillicons.dev/icons?i=kotlin",
+      level: "silver"
+    },
+    {
+      skillName: "PostgreSQL",
+      icon: "https://skillicons.dev/icons?i=postgres",
+      level: "silver"
+    },
+    {
+      skillName: "VB.NET",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualbasic/visualbasic-original.svg",
+      level: "silver"
+    },
+    {
+      skillName: "Jest",
+      icon: "https://skillicons.dev/icons?i=jest",
+      level: "silver"
+    },
+    {
+      skillName: "Testcontainers",
+      icon: "https://api.iconify.design/mdi/test-tube.svg?color=%230ea5e9",
+      level: "silver"
+    },
+    {
+      skillName: "GitHub Actions",
+      icon: "https://skillicons.dev/icons?i=githubactions",
+      level: "silver"
+    },
+    {
+      skillName: "EAS",
+      icon: "https://cdn.simpleicons.org/expo/64748b",
+      level: "silver"
+    },
+    {
+      skillName: "OpenAI",
+      icon: "https://api.iconify.design/simple-icons/openai.svg?color=%2310a37f",
+      level: "gold"
+    },
+    {
+      skillName: "Gemini",
+      icon: "https://api.iconify.design/logos/google-gemini.svg",
+      level: "gold"
+    },
+    {
+      skillName: "RAG",
+      icon: "https://api.iconify.design/mdi/database-search.svg?color=%230ea5e9",
+      level: "gold"
+    },
+    {
+      skillName: "OCR",
+      icon: "https://api.iconify.design/mdi/text-recognition.svg?color=%2310b981",
+      level: "gold"
+    },
+    {
+      skillName: "STT · TTS",
+      icon: "https://api.iconify.design/mdi/account-voice.svg?color=%23f59e0b",
+      level: "gold"
+    },
+    {
+      skillName: "Claude",
+      icon: "https://api.iconify.design/logos/claude-icon.svg",
+      level: "gold"
+    },
+    {
+      skillName: "Copilot",
+      icon: "https://api.iconify.design/simple-icons/githubcopilot.svg?color=%2364748b",
+      level: "gold"
+    },
+    {
+      skillName: "Codex",
+      icon: "https://api.iconify.design/simple-icons/openai.svg?color=%2364748b",
+      level: "gold"
+    },
+    {
+      skillName: "MCP",
+      icon: "https://api.iconify.design/simple-icons/modelcontextprotocol.svg?color=%2364748b",
+      level: "gold"
+    },
+    {
+      skillName: "AI 코드리뷰",
+      icon: "https://api.iconify.design/octicon/code-review-24.svg?color=%238b5cf6",
+      level: "gold"
     }
   ],
   softwareTools: [
     {
-      toolName: "Github",
+      toolName: "GitHub",
       icon: "https://skillicons.dev/icons?i=github"
     },
     {
-      toolName: "vscode",
+      toolName: "VS Code",
       icon: "https://skillicons.dev/icons?i=vscode"
     },
     {
-      toolName: "intelliJ",
+      toolName: "IntelliJ",
       icon: "https://skillicons.dev/icons?i=idea"
     },
     {
@@ -174,11 +270,11 @@ https://fontawesome.com/icons?d=gallery */
       icon: "https://skillicons.dev/icons?i=git"
     },
     {
-      toolName: "sentry",
+      toolName: "Sentry",
       icon: "https://skillicons.dev/icons?i=sentry"
     },
     {
-      toolName: "postman",
+      toolName: "Postman",
       icon: "https://skillicons.dev/icons?i=postman"
     },
     {
@@ -187,7 +283,8 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       toolName: "Cursor",
-      icon: "https://cdn.simpleicons.org/cursor"
+      icon: "https://cdn.simpleicons.org/cursor/64748b",
+      level: "gold"
     },
     {
       toolName: "Jira",
@@ -195,7 +292,74 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       toolName: "Confluence",
-      icon: "https://cdn.simpleicons.org/confluence"
+      icon: "https://cdn.simpleicons.org/confluence/2684ff"
+    },
+    {
+      toolName: "Google Drive",
+      icon: "https://api.iconify.design/logos/google-drive.svg"
+    }
+  ],
+  // 분야별 카드 묶음 (이름은 softwareSkills·softwareTools와 같아야 함)
+  // 분야별 카드 묶음 (size: half = 2열, wide = 한 줄 전체, 기본 3열)
+  groups: [
+    {
+      title: "Frontend · App",
+      desc: "웹 · 모바일 · 키오스크",
+      items: ["React", "React Native", "TypeScript", "JavaScript"]
+    },
+    {
+      title: "Backend",
+      desc: "API · 서버",
+      items: ["Java", "Spring Boot", "Kotlin", "JPA"]
+    },
+    {
+      title: "Database",
+      desc: "설계 · 쿼리 · 마이그레이션",
+      items: ["MS-SQL", "MySQL", "Oracle", "PostgreSQL"]
+    },
+    {
+      title: "AI · 서비스 적용",
+      desc: "LLM · 문서 인식 · 음성 · 검색 증강",
+      size: "half",
+      items: ["OpenAI", "Gemini", "RAG", "OCR", "STT · TTS"]
+    },
+    {
+      title: "AI 개발 도구",
+      desc: "MCP로 Jira · Confluence · Google Drive 연동, GitHub PR AI 코드리뷰",
+      size: "half",
+      items: ["Claude", "Codex", "Copilot", "Cursor", "MCP", "AI 코드리뷰"]
+    },
+    {
+      title: ".NET · ERP",
+      desc: "데스크톱 · 업무 시스템",
+      items: [".NET", "C#", "VB.NET", "ERP"]
+    },
+    {
+      title: "Test",
+      desc: "E2E · 단위 · 통합 테스트",
+      items: ["Selenium", "Appium", "Jest", "Testcontainers"]
+    },
+    {
+      title: "Infra · CI/CD",
+      desc: "배포 · 자동화",
+      items: ["Docker", "AWS", "GitHub Actions", "EAS"]
+    },
+    {
+      title: "Tools",
+      desc: "개발 · 협업 도구",
+      size: "wide",
+      items: [
+        "GitHub",
+        "Git",
+        "VS Code",
+        "IntelliJ",
+        "Postman",
+        "Sentry",
+        "Figma",
+        "Jira",
+        "Confluence",
+        "Google Drive"
+      ]
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -227,7 +391,7 @@ const techStack = {
       color: "#36b9cc"
     },
     {
-      Stack: "Programing",
+      Stack: "Programming",
       progressPercentage: 70,
       color: "#e74a3b"
     }
@@ -312,111 +476,23 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
+  eyebrow: "PROJECTS",
   title: "프로젝트",
-  subtitle: "참여하거나 개인적으로 진행한 주요 프로젝트입니다.",
+  subtitle: "실무에서 참여한 주요 프로젝트입니다.",
   projects: [
-    {
-      image: require("./assets/images/projects/nationalParkKiosk.png"),
-      platform: "App",
-      projectName: "국립공원 키오스크",
-      projectDesc: "React Native 기반 무인 주문/결제 키오스크",
-      contribution: "FrontEnd 100%",
-      tech: [
-        "React Native",
-        "JavaScript",
-        "KG Inicis",
-        "KISAgent",
-        "본인인증",
-        "Kiosk UI/UX",
-        "..."
-      ],
-      longDesc: `- 국립공원 현장 키오스크용 주문 화면 및 결제 UX 구현
-      - 상품 목록/수량 조절/금액 합계 등 핵심 주문 흐름 개발
-      - KG 이니시스 결제 모듈 연동 및 결제 승인/실패 처리 플로우 적용
-      - KISAgent 연동 기반 단말 결제 통신 처리 및 예외 케이스 대응
-      - 결제 전 본인인증 절차를 포함한 사용자 인증 흐름 반영
-      - 직관적인 버튼 구성과 가독성 중심 UI로 빠른 현장 사용성 확보
-      - 운영 환경을 고려한 단순하고 안정적인 화면 전환 구조 적용`,
-    },
-    {
-      image: require("./assets/images/projects/abcMartChat.png"),
-      platform: "App",
-      projectName: "ABC마트 앱 채팅",
-      projectDesc: "KLAT 채팅 솔루션 연동 기반 고객 상담 채팅 고도화",
-      contribution: `PM 역할 수행
-      (채팅 기능 기획/정의, 협업 및 연동 주도)`,
-      tech: [
-        "KLAT Chat Solution",
-        "채팅 기능 기획(PM)",
-        "서비스 정책 설계",
-        "운영/예외 시나리오 정의",
-        "..."
-      ],
-      longDesc: `- 개발 담당이 아닌 채팅 기능 PM 역할로 프로젝트 참여
-      - KLAT 채팅 솔루션 도입 및 앱 연동 범위/요구사항 정의
-      - 전체/안읽음 필터, 안읽은 메시지 뱃지, 최근 대화 시간 표시 기능 기획
-      - 채팅방 검색(사용자/대화 기준) 및 리스트 탐색 UX 플로우 설계
-      - 스와이프 액션(읽음 처리/나가기)과 같은 운영 편의 기능 정책 수립
-      - 아바타, 메시지 미리보기, 하단 탭 네비게이션 등 채팅 메인 화면 구조 정리
-      - 기획/디자인/개발 간 커뮤니케이션을 통한 릴리즈 품질 관리`,
-    },
-    {
-      image: require("./assets/images/projects/animalRace.png"),
-      platform: "Web",
-      projectName: "빙글빙글 동물레이스",
-      projectDesc: "귀여운 동물들이 달리는 랜덤 레이싱 게임",
-      contribution: "100%",
-      tech: ["React", "TypeScript", "framer-motion", "MobX", "..."],
-      longDesc: `- 캐릭터와 바퀴 수를 자유롭게 선택
-      - 각 캐릭터마다 고유한 스킬 발동
-      - 랜덤 요소가 가미된 예측불가 레이스
-      - 실시간 순위와 생동감 넘치는 애니메이션`,
-      footerLink: [
-        {
-          name: "TechBlog",
-          url: "https://munkyu87.github.io/sideproject/animalRace/"
-        },
-        {
-          name: "Play Game",
-          url: "https://munkyu87.github.io/race/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/projects/myPeople.png"),
-      platform: "App",
-      projectName: "MyPeople",
-      projectDesc: "나의 사람들 정보, 일정을 관리",
-      contribution: "100%",
-      tech: [
-        "React Native",
-        "TypeScript",
-        "Redux Toolkit",
-        "AsyncStorage",
-        "react-native-calendars",
-        "Webview",
-        "..."
-      ],
-      longDesc: `- 연락처 관리
-      - 캘린더 일정 관리
-      - 연락 기능(전화 걸기, SMS 보내기, 이메일 보내기)
-      - MBTI 연동
-      `,
-      footerLink: [
-        {
-          name: "TechBlog",
-          url: "https://munkyu87.github.io/sideproject/MyPeople/"
-        }
-      ]
-    },
     {
       image: require("./assets/images/projects/sallime.png"),
       platform: "App",
       projectName: "AI 마을살림e",
-      projectDesc: "AI 경로당 ERP",
-      contribution: `FrontEnd 80% 
-      BackEnd 20% 
-      Database 50%`,
+      featured: true,
+      highlights: [
+        "🏅 GS인증 1등급 (TTA)",
+        "앱 레포 최다 기여 204커밋",
+        "OCR · STT · RAG"
+      ],
+      projectDesc: "AI 경로당 ERP · GS인증 1등급(TTA) 획득",
+      contribution: `앱 프론트엔드 주 개발 (초기 세팅·공통 컴포넌트·주요 화면)
+      Spring API 및 DB 일부 참여`,
       tech: [
         "React Native",
         "TypeScript",
@@ -434,7 +510,9 @@ const bigProjects = {
         "eas",
         "..."
       ],
-      longDesc: `- 회계 및 운영관리
+      longDesc: `- GS인증 1등급(TTA) 획득
+      - 앱 초기 아키텍처 설계 및 공통 컴포넌트 구축, 앱 레포 최다 기여(204커밋)
+      - 회계 및 운영관리
       - 경로당 물품관리
       - 물품 신청 및 A/S 관리
       - 시설보수 관리
@@ -451,11 +529,128 @@ const bigProjects = {
       ]
     },
     {
+      image: require("./assets/images/projects/nationalParkKiosk.png"),
+      platform: "App",
+      projectName: "국립공원 키오스크",
+      featured: true,
+      highlights: ["레포 최다 기여", "결제 · 본인인증 연동"],
+      projectDesc: "React Native 기반 무인 주문/결제 키오스크",
+      contribution: `프론트엔드 주 개발 (레포 최다 기여)
+      주문·결제·본인인증 화면 및 결제 연동`,
+      tech: [
+        "React Native",
+        "TypeScript",
+        "KG Inicis",
+        "KISAgent",
+        "본인인증",
+        "Kiosk UI/UX",
+        "..."
+      ],
+      longDesc: `- 국립공원 현장 키오스크용 주문 화면 및 결제 UX 구현
+      - 상품 목록/수량 조절/금액 합계 등 핵심 주문 흐름 개발
+      - KG 이니시스 결제 모듈 연동 및 결제 승인/실패 처리 플로우 적용
+      - KISAgent 연동 기반 단말 결제 통신 처리 및 예외 케이스 대응
+      - 결제 전 본인인증 절차를 포함한 사용자 인증 흐름 반영
+      - 직관적인 버튼 구성과 가독성 중심 UI로 빠른 현장 사용성 확보
+      - 운영 환경을 고려한 단순하고 안정적인 화면 전환 구조 적용`
+    },
+    {
+      image: require("./assets/images/projects/evcare.png"),
+      platform: "Windows",
+      projectName: "EVCare 보험청구 관리 시스템",
+      featured: true,
+      highlights: ["EMR 간편청구", "React Native Windows"],
+      projectDesc:
+        "보험금 청구·재증명·EMR 간편청구를 처리하는 Windows 보험청구 키오스크",
+      contribution: `Product Owner 역할 수행
+      서비스 기획 및 요구사항 정의 60%
+      사용자 여정/프로세스 설계 60%
+      디자인·개발 협업 주도`,
+      tech: ["React Native Windows", "C#"],
+      longDesc: `- 보험금 청구 프로세스
+      - 재증명 발급 프로세스
+      - 빠른청구 프로세스
+      - 간편청구(EMR) 프로세스 등`
+    },
+    {
+      image: require("./assets/images/projects/rental.png"),
+      platform: "Web",
+      projectName: "건설근로 단말기 Rental",
+      projectDesc: "재고관리 렌탈 프로그램",
+      contribution: `웹: 입고·임대·재고 폐기·발주 화면 및 API 연동
+      API: 임대 교환·임대료·수리·폐기 API, 견적서·이메일 자동 발송`,
+      tech: ["React", "TypeScript", "MySql", "Java Spring", "RPA", "..."],
+      longDesc: `- 임대관리(임대, 교환, 연장, 회수, 결제)
+      - 입고관리
+      - 판매관리
+      - 재고관리
+      - 수리
+      - 대상업체 자동 이메일 발송 시스템 구축`,
+      footerLink: [
+        {
+          name: "Visit WebSite",
+          url: "https://const-rental.jinpos.net/login"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/projects/rentalMobile.png"),
+      images: [
+        {
+          src: require("./assets/images/projects/gallery/rentalMobile-1.jpg"),
+          caption: "접근 화면 · 공사번호로 기존 정보 조회 또는 신규 발주"
+        },
+        {
+          src: require("./assets/images/projects/gallery/rentalMobile-2.jpg"),
+          caption: "발주요청서 · 이벤트 상품권과 단말기 선택"
+        },
+        {
+          src: require("./assets/images/projects/gallery/rentalMobile-3.jpg"),
+          caption: "발주·결제 방식 · 입금기한과 계산서 발행일 자동 지정"
+        },
+        {
+          src: require("./assets/images/projects/gallery/rentalMobile-4.jpg"),
+          caption: "발주 내용 · 필수 항목 검증과 사업자등록증 첨부"
+        }
+      ],
+      platform: "Web",
+      projectName: "건설근로 단말기 모바일 발주",
+      projectDesc: "건설 현장 단말기 발주 요청서를 작성·제출하는 모바일 웹",
+      contribution: `아키텍처 설계 및 초기 세팅 (Clean Architecture 레이어 구조)
+      절대경로·환경변수·Axios 공통 설정, 접근(공사번호 조회) 화면 개발`,
+      tech: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "MUI",
+        "Zustand",
+        "Axios",
+        "Docker",
+        "GitHub Actions",
+        "..."
+      ],
+      longDesc: `- 공사번호로 기존 공사·업체 정보 조회 후 발주서 자동 채움
+      - 신규 발주 및 견적수정요청 메일 링크를 통한 프리필
+      - 단말기 타입·대수, 임대/구매, 납부 방식 선택
+      - 출고희망일 기준 입금기한·계산서 발행일 자동 지정
+      - 클라이언트 검증 후 사업자등록증 첨부와 함께 발주 요청 (multipart)
+      - Clean Architecture(Screens → Store → UseCase → API) 구조, Result 패턴
+      - Docker(nginx) + GitHub Actions로 EC2 배포`,
+      footerLink: [
+        {
+          name: "Visit WebSite",
+          url: "https://construction-terminal-po.jinpos.net/access"
+        }
+      ]
+    },
+    {
       image: require("./assets/images/projects/coupangPOS.png"),
       platform: "Windows",
       projectName: "CoupangPOS",
       projectDesc: "주문, 결제, 매장 관리를 더 빠르고 쉽게",
-      contribution: "FrontEnd 40%",
+      contribution: `POS 프론트엔드 개발 (팀)
+      Sales Dashboard·NPS·단말기 IP 자동 연동 담당
+      카카오톡 전송·배달 매출 수집 자동화 개발`,
       tech: [
         "React Native",
         "React",
@@ -481,51 +676,26 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/projects/rental.png"),
-      platform: "Web",
-      projectName: "건설근로 단말기 Rental",
-      projectDesc: "재고관리 렌탈 프로그램",
-      contribution: `FrontEnd 100% 
-      BackEnd 50% 
-      Database 50%`,
+      image: require("./assets/images/projects/abcMartChat.png"),
+      platform: "App",
+      projectName: "ABC마트 앱 채팅",
+      projectDesc: "KLAT 채팅 솔루션 연동 기반 고객 상담 채팅 고도화",
+      contribution: `PM 역할 수행
+      (채팅 기능 기획/정의, 협업 및 연동 주도)`,
       tech: [
-        "React",
-        "TypeScript",
-        "MySql",
-        "Java Spring",
-        "RPA",
+        "KLAT Chat Solution",
+        "채팅 기능 기획(PM)",
+        "서비스 정책 설계",
+        "운영/예외 시나리오 정의",
         "..."
       ],
-      longDesc: `- 임대관리(임대, 교환, 연장, 횟, 결제)
-      - 입고관리
-      - 판매관리
-      - 재고관리
-      - 수리
-      - 대상업체 자동 이메일 발송 시스템 구축`,
-      footerLink: [
-        {
-          name: "Visit WebSite",
-          url: "http://ec2-43-200-67-228.ap-northeast-2.compute.amazonaws.com:9020/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/projects/evcare.png"),
-      platform: "windows",
-      projectName: "EVCare 보험청구 관리 시스템",
-      projectDesc: "공급망 관리(SCM) 및 발주/입고/재고 통합 관리 웹 시스템",
-      contribution: `Product Owner 역할 수행
-      서비스 기획 및 요구사항 정의 60%
-      사용자 여정/프로세스 설계 60%
-      디자인·개발 협업 주도`,
-      tech: [
-        "React Native Windows",
-        "C#",
-      ],
-      longDesc: `- 보험금 청구 프로세스
-      - 재증명 발급 프로세스
-      - 빠른청구 프로세스
-      - 간편청구(EMR) 프로세스 등`,
+      longDesc: `- 개발 담당이 아닌 채팅 기능 PM 역할로 프로젝트 참여
+      - KLAT 채팅 솔루션 도입 및 앱 연동 범위/요구사항 정의
+      - 전체/안읽음 필터, 안읽은 메시지 뱃지, 최근 대화 시간 표시 기능 기획
+      - 채팅방 검색(사용자/대화 기준) 및 리스트 탐색 UX 플로우 설계
+      - 스와이프 액션(읽음 처리/나가기)과 같은 운영 편의 기능 정책 수립
+      - 아바타, 메시지 미리보기, 하단 탭 네비게이션 등 채팅 메인 화면 구조 정리
+      - 기획/디자인/개발 간 커뮤니케이션을 통한 릴리즈 품질 관리`
     },
     {
       image: require("./assets/images/projects/emax.png"),
@@ -534,12 +704,7 @@ const bigProjects = {
       projectDesc: "가구점 대상 유통 ERP",
       contribution: `ERP 화면 80% 
       DB 설계 및 개발 80%`,
-      tech: [
-        "Emax",
-        "VB.net",
-        "MS-SQL",
-        "..."
-      ],
+      tech: ["Emax", "VB.net", "MS-SQL", "..."],
       longDesc: `- 판매관리
       - 재고관리
       - 고객관리
@@ -547,7 +712,7 @@ const bigProjects = {
       - 정산관리
       - 배송관리 구축 개발
       - Franchise관리 구축 개발
-      - 적용 업체: 인아트, 이노메싸`,
+      - 적용 업체: 인아트, 이노메싸`
     },
     {
       image: require("./assets/images/projects/erp.png"),
@@ -556,19 +721,13 @@ const bigProjects = {
       projectDesc: "매입·매출·재고·정산 중심의 기업용 통합 ERP 시스템",
       contribution: `ERP 화면 60% 
       DB 설계 및 개발 60%`,
-      tech: [
-        "Emax",
-        "VB.net",
-        "MS-SQL",
-        "MySQL",
-        "..."
-      ],
+      tech: ["Emax", "VB.net", "MS-SQL", "MySQL", "..."],
       longDesc: `- 매입관리
       - 매출관리
       - 재고관리
       - 고객관리
       - 정산관리
-      - 적용 업체: 젠틀몬스터, 지씨바이오, 스페셜라이즈드, 혜림원, 쏘시오보떼, 디벨롭리스온 등`,
+      - 적용 업체: 젠틀몬스터, 지씨바이오, 스페셜라이즈드, 혜림원, 쏘시오보떼, 디벨롭리스온 등`
     },
     {
       image: require("./assets/images/projects/funeralHall.png"), // 적절한 이미지로 교체
@@ -576,18 +735,14 @@ const bigProjects = {
       projectName: "장례식장 ERP 시스템",
       projectDesc: "장례식장 통합 정산 및 판매 ERP 시스템",
       contribution: "ERP 화면 및 DB 개발 40%",
-      tech: [
-        "C#.Net",
-        "MS-SQL",
-        "..."
-      ],
+      tech: ["C#.Net", "MS-SQL", "..."],
       longDesc: `- 장례식장 대상 통합 정산 솔루션 개발
       - 기준정보 관리(사용자, 거래처, 품목, 세트) 모듈 개발
       - 매입/재고 모듈 (매입등록/수정, 실재고 이월, 세트관리 등) 개발
       - 판매/고인/빈소 관리 기능 개발
       - 정산 모듈 (빈소정산, 퇴실 정산 등) 개발
       - LCD 전광판 연동 화면 구성
-      - 적용 병원: 고대병원(안산,안암,구로), 분당차병원, 중앙보훈병원, 수원연화장, 평택병원, 인천사랑병원, 더바른, 하남시마루공원 등`,
+      - 적용 병원: 고대병원(안산,안암,구로), 분당차병원, 중앙보훈병원, 수원연화장, 평택병원, 인천사랑병원, 더바른, 하남시마루공원 등`
     },
     {
       image: require("./assets/images/projects/yangjisa.png"), // 적절한 이미지로 교체
@@ -595,32 +750,191 @@ const bigProjects = {
       projectName: "SCM 시스템",
       projectDesc: "공급망 관리(SCM) 및 발주/입고/재고 통합 관리 웹 시스템",
       contribution: "DB 설계 및 쿼리/프로시저 개발 80%",
-      tech: [
-        "MySQL",
-        "MS-SQL",
-      ],
+      tech: ["MySQL", "MS-SQL"],
       longDesc: `- SCM 프로세스(발주, 입고, 출고, 재고)의 전체 흐름에 맞춘 DB 스키마 설계 및 구조 정비
       - 대량 데이터 기반의 복잡한 조회/집계 로직 쿼리 개발
       - 발주, 입고, 물류 이동, 재고관리 등 주요 기능에 필요한 Stored Procedure 및 View 개발
       - 성능 병목을 유발하는 쿼리 최적화 및 인덱스 전략 수립
       - ERP와의 데이터 동기화를 위한 테이블 구조 개선 및 배치 로직 반영
       - 운영 중 발생하는 데이터 이슈 분석 및 DB 차원의 문제 해결
-      - 적용 업체: 위드랜드, 양지사 등`,
+      - 적용 업체: 위드랜드, 양지사 등`
     },
     {
       projectName: "그 외..",
       projectDesc: "주 참여 프로젝트 외에 다수의 기술 작업 수행",
       longDesc: `- 삼성 SmartThings 스마트 플러그 API 연동
-      - Aparch SuperSet 대시보드 DB 스키마 연동 구현
+      - Apache Superset 대시보드 DB 스키마 연동 구현
       - 통계 화면용 SQL 쿼리 및 집계 로직 설계
       - Weather(Open-Meteo) API 연동
       - VisionCamera 기반 촬영·미리보기 공통 컴포넌트 구현
       - EAS(Build, Submit) 환경 구축 및 Android/iOS 자동 빌드
       - RN앱 Webview → Web ↔ React Native 양방향 통신 브릿지 구현
-      - Naver News API 연동 시도`,
-    },
+      - Naver News API 연동 시도`
+    }
   ],
   display: true // Set false to hide this section, defaults to true
+};
+
+// Side projects (personal work, shown as a separate section)
+
+const sideProjects = {
+  eyebrow: "SIDE PROJECTS",
+  title: "사이드 프로젝트",
+  subtitle: "직접 기획하고 개발한 개인 프로젝트입니다.",
+  variant: "side", // 2열 큰 카드로 표시
+  projects: [
+    {
+      image: require("./assets/images/projects/lotteryDiary.png"),
+      images: [
+        {
+          src: require("./assets/images/projects/gallery/lotteryDiary-1.jpg"),
+          caption: "홈 · 이번 회차와 지난 회차 결과"
+        },
+        {
+          src: require("./assets/images/projects/gallery/lotteryDiary-2.jpg"),
+          caption: "다이어리 · 월별 구매 기록 타임라인"
+        },
+        {
+          src: require("./assets/images/projects/gallery/lotteryDiary-3.jpg"),
+          caption: "통계 · 구매/당첨 가계부와 최고 기록"
+        },
+        {
+          src: require("./assets/images/projects/gallery/lotteryDiary-4.jpg"),
+          caption: "Pearl Glass 테마 (테마 4종 지원)"
+        },
+        {
+          src: require("./assets/images/projects/gallery/lotteryDiary-5.jpg"),
+          caption: "더보기 · 화면 모드와 알림 설정"
+        }
+      ],
+      platform: "App",
+      projectName: "추첨일기",
+      status: {type: "live", label: "AWS 배포"},
+      highlights: [
+        "통합 테스트 123개 (Testcontainers)",
+        "JWT Refresh Token Rotation + 탈취 감지",
+        "OpenAPI → TS 클라이언트 자동 생성"
+      ],
+      projectDesc: "복권 구매 기록과 당첨 결과를 자동으로 확인하는 다이어리 앱",
+      contribution: `FrontEnd 100%
+      BackEnd 100%
+      Database 100%`,
+      tech: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "TanStack Query",
+        "Kotlin",
+        "Spring Boot",
+        "PostgreSQL",
+        "Flyway",
+        "Testcontainers",
+        "AWS Lightsail",
+        "..."
+      ],
+      longDesc: `- 복권 QR 인식 및 수동 등록, 회차별 구매 기록 관리
+      - 동행복권 공개 API 연동으로 당첨번호 자동 수집 및 등수/당첨금 판정
+      - 구매·당첨 통계, 월별 기록, 받지 않은 당첨금 알림
+      - JWT 인증 (Refresh Token Rotation + 재사용 탈취 감지)
+      - 이벤트 기반 모듈 분리 및 ArchUnit으로 의존성 규칙 강제
+      - OpenAPI 스펙 → TypeScript API 클라이언트 자동 생성 파이프라인
+      - Testcontainers 기반 통합 테스트 123개
+      - ADR로 설계 결정 기록, AWS Lightsail 운영 배포`
+    },
+    {
+      image: require("./assets/images/projects/jokerDice.png"),
+      images: [
+        {
+          src: require("./assets/images/projects/gallery/jokerDice-1.jpg"),
+          caption: "타이틀 화면"
+        },
+        {
+          src: require("./assets/images/projects/gallery/jokerDice-2.jpg"),
+          caption: "게임 화면 · 블라인드 목표 점수, 주사위 보드, 핸드 카드"
+        },
+        {
+          src: require("./assets/images/projects/gallery/jokerDice-3.jpg"),
+          caption: "조커 효과 툴팁"
+        },
+        {
+          src: require("./assets/images/projects/gallery/jokerDice-4.jpg"),
+          caption: "족보 정보 · 족보별 기본 점수"
+        }
+      ],
+      platform: "App",
+      projectName: "Joker Dice",
+      status: {type: "wip", label: "출시 준비 중"},
+      highlights: [
+        "주사위 족보 · 점수 계산 엔진",
+        "트리거 기반 조커 시스템",
+        "보상 · 상점 루프"
+      ],
+      projectDesc: "주사위 기반 로그라이크 덱빌딩 모바일 게임",
+      contribution: "100%",
+      tech: ["React Native", "TypeScript", "react-native-svg", "Jest", "..."],
+      longDesc: `- 주사위 5개 기반 족보 판정과 점수 계산 (족보 점수 + 숫자 합 + 조커 보정)
+      - 드로우/버림/덱 압축이 있는 액션 카드 순환 구조
+      - 트리거 기반 조커 시스템과 보스 블라인드 제약
+      - 보상 선택과 상점 루프
+      - Android 출시 준비 중`
+    },
+    {
+      image: require("./assets/images/projects/animalRace.png"),
+      platform: "Web",
+      projectName: "빙글빙글 동물레이스",
+      status: {type: "play", label: "플레이 가능"},
+      highlights: [
+        "랜덤 레이싱 애니메이션 (framer-motion)",
+        "참가 동물 · 바퀴 수 설정"
+      ],
+      projectDesc: "귀여운 동물들이 달리는 랜덤 레이싱 게임",
+      contribution: "100%",
+      tech: ["React", "TypeScript", "framer-motion", "MobX", "..."],
+      longDesc: `- 캐릭터와 바퀴 수를 자유롭게 선택
+      - 각 캐릭터마다 고유한 스킬 발동
+      - 랜덤 요소가 가미된 예측불가 레이스
+      - 실시간 순위와 생동감 넘치는 애니메이션`,
+      footerLink: [
+        {
+          name: "TechBlog",
+          url: "https://munkyu87.github.io/sideproject/animalRace/"
+        },
+        {
+          name: "Play Game",
+          url: "https://munkyu87.github.io/race/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/projects/myPeople.png"),
+      platform: "App",
+      projectName: "MyPeople",
+      highlights: ["사람별 정보 · 관계 관리", "캘린더 일정 관리"],
+      projectDesc: "나의 사람들 정보, 일정을 관리",
+      contribution: "100%",
+      tech: [
+        "React Native",
+        "TypeScript",
+        "Redux Toolkit",
+        "AsyncStorage",
+        "react-native-calendars",
+        "Webview",
+        "..."
+      ],
+      longDesc: `- 연락처 관리
+      - 캘린더 일정 관리
+      - 연락 기능(전화 걸기, SMS 보내기, 이메일 보내기)
+      - MBTI 연동
+      `,
+      footerLink: [
+        {
+          name: "TechBlog",
+          url: "https://munkyu87.github.io/sideproject/MyPeople/"
+        }
+      ]
+    }
+  ],
+  display: true
 };
 
 // Achievement Section
@@ -685,8 +999,9 @@ const achievementSection = {
 };
 
 const certificationSection = {
-  title: "📄 자격증",
-  // subtitle: "서브 타이틀",
+  eyebrow: "PROOF",
+  title: "인증 · 자격",
+  subtitle: "공식 인증과 자격증을 한곳에 모았어요.",
 
   certificationsCards: [
     {
@@ -742,32 +1057,33 @@ const certificationSection = {
 };
 
 const verificationSection = {
-  title: "검증/인증",
-  subtitle: "프로젝트 수행 결과에 대한 공식 인증 및 감리 완료 이력",
+  // 인증 · 자격 섹션 상단의 큰 카드
   cards: [
     {
-      title: "중소기업 스마트서비스 지원사업 사업관리시스템 감리",
-      subtitle: "최종완료보고서 제출 및 최종 승인",
-      image: require("./assets/images/verifications/sme-audit-final-approval-1.png"),
-      description:
-        "보험청구 데이터 히스토리 기반 통합 처리 플랫폼 과제에 대해 사업관리시스템 내 감리 절차를 최종 승인까지 완료했습니다.",
-      footerLink: [
-        {
-          name: "증빙 화면 2",
-          url: require("./assets/images/verifications/sme-audit-final-approval-2.png")
-        }
-      ]
+      title: "GS 인증 (TTA 1등급)",
+      subtitle: "AI 마을살림e · 시험성적서로 품질 검증",
+      icon: "🏅",
+      tone: "gold",
+      action: "성적서 PDF",
+      url: `${process.env.PUBLIC_URL}/docs/gs-tta-grade1-test-report-260212.pdf`
     },
     {
-      title: "GS 인증(TTA 1등급) 시험성적서",
-      subtitle: "경로당 ERP AI 마을살림e",
-      image: require("./assets/images/projects/sallime.png"),
+      title: "스마트서비스 지원사업 감리",
+      subtitle: "최종완료보고서 제출 및 최종 승인",
+      icon: "📋",
+      tone: "blue",
+      action: "증빙 보기",
       description:
-        "AI 마을살림e 프로젝트의 GS 인증(TTA 1등급) 시험성적서 문서를 통해 품질 검증 이력을 확인할 수 있습니다.",
-      footerLink: [
+        "보험청구 데이터 히스토리 기반 통합 처리 플랫폼 과제에 대해 사업관리시스템 내 감리 절차를 최종 승인까지 완료했습니다.",
+      // 누르면 상세 창에서 증빙 화면을 넘겨 봄
+      gallery: [
         {
-          name: "시험성적서 보기(PDF)",
-          url: "/docs/gs-tta-grade1-test-report-260212.pdf"
+          src: require("./assets/images/verifications/sme-audit-final-approval-1.png"),
+          caption: "최종완료보고서 제출 · 검토 정보"
+        },
+        {
+          src: require("./assets/images/verifications/sme-audit-final-approval-2.png"),
+          caption: "협약 진행 상태 · 전 기관 승인완료"
         }
       ]
     }
@@ -845,7 +1161,9 @@ const contactInfo = {
   // subtitle:
   //   "Discuss a project or just want to say hi? My Inbox is open for all.",
   // number: "+92-0000000000",
-  email_address: "munstar87@naver.com"
+  email_address: "munstar87@naver.com",
+  ctaTitle: "함께 일할 기회를 찾고 있어요",
+  ctaSubtitle: "프로젝트 제안이나 커피챗 모두 환영해요."
 };
 
 // Twitter Section
@@ -868,6 +1186,7 @@ export {
   workExperiences,
   openSource,
   bigProjects,
+  sideProjects,
   achievementSection,
   certificationSection,
   verificationSection,

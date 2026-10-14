@@ -15,7 +15,8 @@
 }
 .certificate-card {
   background: #f9fafb;
-  width: 250px;
+  box-sizing: border-box;
+  width: 100%;
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
   padding: 1rem;
   border-radius: 10px;
@@ -142,4 +143,18 @@
 }
 span.certificate-tag:hover {
   background: $buttonHover;
+}
+
+.dark-mode.certificate-card {
+  border-color: #2c3445;
+}
+.dark-mode .cert-card-header {
+  background-color: #24304a;
+}
+.dark-mode .cert-title {
+  color: $textColorDark;
+}
+.dark-mode .cert-logo {
+  border-color: #3a4560;
+  background-color: #ffffff;
 }

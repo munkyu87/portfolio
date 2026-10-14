@@ -2,13 +2,14 @@ import React, {useEffect, useState} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
-import StackProgress from "./skillProgress/skillProgress";
+// import StackProgress from "./skillProgress/skillProgress";
 import WorkExperience from "./workExperience/WorkExperience";
 import Projects from "./projects/Projects";
 import StartupProject from "./StartupProjects/StartupProject";
-import Verification from "./verification/Verification";
+// import Verification from "./verification/Verification";
 import Achievement from "./achievement/Achievement";
-import Certification from "./certification/Certification";
+// import Certification from "./certification/Certification";
+import Proof from "./proof/Proof";
 import RecentPosts from "./recentPosts/RecentPosts";
 import Blogs from "./blogs/Blogs";
 import Footer from "../components/footer/Footer";
@@ -19,7 +20,7 @@ import ScrollToTopButton from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
-import {splashScreen} from "../portfolio";
+import {splashScreen, sideProjects} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
@@ -56,14 +57,14 @@ const Main = () => {
             <Header />
             <Greeting />
             <Skills />
-            <StackProgress />
+            {/* <StackProgress /> */}
             {/* <Education /> */}
             {/* <WorkExperience /> */}
             {/* <Projects /> */}
             <StartupProject />
-            <Verification />
+            <StartupProject section={sideProjects} id="sideProjects" />
             {/* <Achievement /> */}
-            <Certification />
+            <Proof />
             <RecentPosts />
             {/* <Blogs /> */}
             {/* <Talks /> */}
