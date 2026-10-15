@@ -26,10 +26,10 @@ const greeting = {
   name: "최문규입니다",
   availability: "새로운 기회에 열려 있어요", // 비우면 배지 숨김
   subTitle: emoji(
-    "React·React Native로 웹·앱·키오스크를 만들고, Spring 백엔드와 DB, AI(OCR·STT·RAG)까지 서비스 전체를 다루는 12년 차 개발자입니다. ERP·POS·결제 연동처럼 현장에서 매일 쓰이는 시스템을 오래 만들어 왔습니다."
+    "요구사항 기획과 아키텍처 설계부터 React·React Native 웹·앱·키오스크, Spring 백엔드와 DB, AI(OCR·STT·RAG)까지 서비스 전체를 맡아 온 12년 차 개발자입니다. PO·팀장으로 프로젝트를 이끌며 ERP·POS·결제처럼 현장에서 매일 쓰이는 시스템을 만들어 왔습니다."
   ),
-  // resumeLink:
-  //   "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+  // 비우면 이력서 버튼 숨김 (공개용이라 휴대폰 번호 없는 버전)
+  resumeLink: process.env.PUBLIC_URL + "/docs/choi-munkyu-resume.pdf",
   // 첫 화면 오른쪽 숫자 카드 (tone: blue | gold)
   stats: [
     {value: "12년", label: "개발 경력"},

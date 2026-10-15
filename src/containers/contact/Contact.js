@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import "./Contact.scss";
 import "../../components/sectionHeader/SectionHeader.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import {contactInfo} from "../../portfolio";
+import {contactInfo, greeting} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
@@ -32,6 +32,16 @@ export default function Contact() {
           <div className="cta-text">
             <h2>{contactInfo.ctaTitle}</h2>
             <p>{contactInfo.ctaSubtitle}</p>
+            {greeting.resumeLink && (
+              <a
+                className="cta-resume"
+                href={greeting.resumeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="far fa-file-pdf"></i> 이력서 PDF 보기
+              </a>
+            )}
             {contactInfo.number && (
               <a className="cta-phone" href={"tel:" + contactInfo.number}>
                 {contactInfo.number}

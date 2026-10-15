@@ -44,6 +44,16 @@ export default function Greeting() {
               <a className="hero-btn" href="#contact">
                 <i className="far fa-envelope"></i> 연락하기
               </a>
+              {greeting.resumeLink && (
+                <a
+                  className="hero-btn"
+                  href={greeting.resumeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="far fa-file-pdf"></i> 이력서 PDF
+                </a>
+              )}
             </div>
             <SocialMedia />
           </div>
