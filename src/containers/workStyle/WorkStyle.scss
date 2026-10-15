@@ -1,0 +1,112 @@
+.ws-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ws-step {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 22px 20px;
+  border: 1px solid var(--ds-line);
+  border-radius: 20px;
+  background: var(--ds-card);
+  box-shadow: var(--ds-shadow);
+  color: var(--ds-text);
+
+  // 단계 사이 연결 화살표
+  &:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    top: 38px;
+    right: -16px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 14px;
+    color: var(--ds-sub);
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  h3 {
+    margin: 4px 0 0;
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  p {
+    flex: 1;
+    margin: 0;
+    color: var(--ds-sub);
+    font-size: 14.5px;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+}
+
+.ws-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ws-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--ds-soft);
+  font-size: 22px;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.ws-num {
+  color: var(--ds-link);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.ws-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  span {
+    padding: 3px 8px;
+    border-radius: 5px;
+    background: var(--ds-chip);
+    color: var(--ds-chip-text);
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 1100px) {
+  .ws-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ws-step::after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ws-steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

@@ -367,6 +367,40 @@ https://fontawesome.com/icons?d=gallery */
 
 // Education Section
 
+// 일하는 방식 (기획 → 설계 → 개발 → 자동화)
+const workStyleSection = {
+  eyebrow: "HOW I WORK",
+  title: "일하는 방식",
+  subtitle: "코드를 쓰기 전에 무엇을 왜 만드는지부터 맞추고, AI로 속도를 냅니다.",
+  steps: [
+    {
+      icon: "🧭",
+      title: "기획 검토",
+      desc: "개발 전에 기획과 요구사항을 함께 검토해요. PO 경험으로 빠진 시나리오와 우선순위를 먼저 짚어요.",
+      tags: ["요구사항 정리", "사용자 흐름"]
+    },
+    {
+      icon: "📐",
+      title: "테크 디자인 & 리뷰",
+      desc: "구현 전에 테크 디자인 문서를 쓰고 팀원들과 리뷰해요. 구조, 범위, 리스크를 조율한 뒤 개발에 들어가요.",
+      tags: ["아키텍처", "API · DB 설계", "설계 리뷰"]
+    },
+    {
+      icon: "🤖",
+      title: "AI와 함께 개발",
+      desc: "Claude, Codex, Copilot, Cursor로 구현과 테스트를 빠르게 하고, GitHub PR에는 AI 코드리뷰를 붙여 품질을 지켜요.",
+      tags: ["Claude", "Codex", "Copilot", "Cursor", "AI 코드리뷰"]
+    },
+    {
+      icon: "⚙️",
+      title: "MCP 업무 자동화",
+      desc: "MCP로 Jira, Confluence, Google Drive를 AI 도구에 연결해 이슈 정리와 문서화를 자동화해요.",
+      tags: ["MCP", "Jira", "Confluence", "Google Drive"]
+    }
+  ],
+  display: true // Set false to hide this section
+};
+
 const techStack = {
   viewSkillBars: true,
   experience: [
@@ -1177,6 +1211,7 @@ const isHireable = false; // Set false if you are not looking for a job. Also is
 
 export {
   illustration,
+  workStyleSection,
   greeting,
   socialMediaLinks,
   splashScreen,

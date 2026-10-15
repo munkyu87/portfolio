@@ -6,6 +6,7 @@ import StyleContext from "../../contexts/StyleContext";
 import {
   greeting,
   skillsSection,
+  workStyleSection,
   bigProjects,
   sideProjects,
   certificationSection
@@ -13,6 +14,7 @@ import {
 
 const MENU = [
   {id: "skills", label: "기술", show: skillsSection.display},
+  {id: "workStyle", label: "일하는 방식", show: workStyleSection.display},
   {id: "projects", label: "프로젝트", show: bigProjects.display},
   {id: "sideProjects", label: "사이드", show: sideProjects.display},
   {id: "proof", label: "인증·자격", show: certificationSection.display},

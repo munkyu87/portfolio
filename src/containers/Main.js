@@ -10,6 +10,7 @@ import StartupProject from "./StartupProjects/StartupProject";
 import Achievement from "./achievement/Achievement";
 // import Certification from "./certification/Certification";
 import Proof from "./proof/Proof";
+import WorkStyle from "./workStyle/WorkStyle";
 import RecentPosts from "./recentPosts/RecentPosts";
 import Blogs from "./blogs/Blogs";
 import Footer from "../components/footer/Footer";
@@ -57,6 +58,7 @@ const Main = () => {
             <Header />
             <Greeting />
             <Skills />
+            <WorkStyle />
             {/* <StackProgress /> */}
             {/* <Education /> */}
             {/* <WorkExperience /> */}
