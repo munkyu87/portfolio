@@ -44,8 +44,7 @@ const greeting = {
 
 const socialMediaLinks = {
   github: "https://github.com/munkyu87",
-  linkedin:
-    "https://www.linkedin.com/in/%EB%AC%B8%EA%B7%9C-%EC%B5%9C-5a30892b2/",
+  linkedin: "https://www.linkedin.com/in/munkyu87/",
   gmail: "munstar87@naver.com",
   blog: "https://munkyu87.github.io/",
   instagram: "https://instagram.com/mk_choi87",
